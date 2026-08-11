@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>完了！我被男同学包围了～高地探险篇～</title>
+<title>完了！我被男同学包围～高地探险篇～</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
@@ -80,14 +80,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 img, video { max-width: 100%; height: auto; display: block; }
 body { overflow-wrap: break-word; -webkit-tap-highlight-color: transparent; }
-
 html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
   font-family: '"Noto Serif SC"', serif;
 }
-
 #game-root {
   position: relative;
   width: 100vw;
@@ -98,7 +96,6 @@ html, body {
   user-select: none;
   -webkit-user-select: none;
 }
-
 /* ========== 背景层 ========== */
 .bg-layer {
   position: absolute;
@@ -108,7 +105,6 @@ html, body {
   transition: opacity 0.8s ease;
   z-index: 0;
 }
-
 .bg-gradient {
   position: absolute;
   inset: 0;
@@ -118,7 +114,6 @@ html, body {
     hsl(270, 90%, 94%) 100%);
   z-index: 0;
 }
-
 .bg-overlay {
   position: absolute;
   inset: 0;
@@ -126,7 +121,6 @@ html, body {
   z-index: 1;
   pointer-events: none;
 }
-
 /* ========== 角色立绘 ========== */
 .char-layer {
   position: absolute;
@@ -137,7 +131,6 @@ html, body {
   align-items: flex-end;
   justify-content: center;
 }
-
 .char-sprite {
   position: absolute;
   bottom: 0;
@@ -149,39 +142,31 @@ html, body {
   transform: translateY(30px);
   filter: drop-shadow(0 10px 20px hsl(340 40% 30% / 0.2));
 }
-
 .char-sprite.pos-left   { left: -5%;  }
 .char-sprite.pos-center { left: 50%; transform: translateX(-50%) translateY(0); }
 .char-sprite.pos-right  { right: -5%; }
-
 .char-sprite.active {
   opacity: 1;
 }
-
 .char-sprite.active.pos-left   { transform: translateX(0) translateY(0); }
 .char-sprite.active.pos-right  { transform: translateX(0) translateY(0); }
 .char-sprite.active.pos-center { transform: translateX(-50%) translateY(0); }
-
 .char-sprite.dim {
   filter: drop-shadow(0 10px 20px hsl(340 40% 30% / 0.15)) brightness(0.6) saturate(0.7);
   opacity: 0.5;
 }
-
 .char-sprite.speaking {
   transform: translateY(-8px) scale(1.02);
   filter: drop-shadow(0 15px 25px hsl(340 50% 40% / 0.3));
 }
-
 .char-sprite.pos-center.speaking {
   transform: translateX(-50%) translateY(-8px) scale(1.03);
 }
-
 @media (max-width: 640px) {
   .char-sprite { height: 70%; }
   .char-sprite.pos-left   { left: -15%; }
   .char-sprite.pos-right  { right: -15%; }
 }
-
 /* ========== 对话框 ========== */
 .dialog-box {
   position: absolute;
@@ -201,7 +186,6 @@ html, body {
   z-index: 10;
   cursor: pointer;
 }
-
 .dialog-box::before {
   content: '';
   position: absolute;
@@ -212,7 +196,6 @@ html, body {
   opacity: 0.5;
   filter: blur(8px);
 }
-
 .char-name {
   display: inline-block;
   padding: 4px 16px;
@@ -223,9 +206,8 @@ html, body {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 10px;
-  box-shadow: 0 2px 8px hsl(340 70% 50% / 0.3);
+  box-shadow: 0 2px 8 hsl(340 70% 50% / 0.3);
 }
-
 .dialog-text {
   color: hsl(240, 20%, 25%);
   font-size: 17px;
@@ -234,13 +216,11 @@ html, body {
   white-space: pre-wrap;
   word-break: break-word;
 }
-
 @media (max-width: 640px) {
   .dialog-box { bottom: 16px; padding: 14px 16px; border-radius: 16px; }
   .char-name { font-size: 14px; padding: 3px 12px; }
   .dialog-text { font-size: 15px; line-height: 1.7; min-height: 50px; }
 }
-
 .triangle {
   position: absolute;
   right: 20px;
@@ -252,12 +232,10 @@ html, body {
   transform: rotate(45deg);
   animation: triangleBounce 1s ease-in-out infinite;
 }
-
 @keyframes triangleBounce {
   0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 1; }
   50% { transform: rotate(45deg) translate(3px, 3px); opacity: 0.5; }
 }
-
 /* ========== 选项按钮 ========== */
 .choice-container {
   position: absolute;
@@ -272,7 +250,6 @@ html, body {
   gap: 12px;
   animation: slideUp 0.4s ease-out;
 }
-
 .choice-btn {
   width: 100%;
   padding: 14px 20px;
@@ -291,14 +268,12 @@ html, body {
   position: relative;
   overflow: hidden;
 }
-
 .choice-btn::before {
   content: '♡';
   margin-right: 10px;
   color: hsl(340, 70%, 65%);
   font-size: 14px;
 }
-
 .choice-btn:hover {
   transform: translateY(-2px);
   border-color: hsl(340, 75%, 65%);
@@ -307,16 +282,13 @@ html, body {
     hsl(340, 100%, 97%) 0%,
     hsl(270, 90%, 95%) 100%);
 }
-
 .choice-btn:active {
   transform: translateY(0);
 }
-
 @media (max-width: 640px) {
   .choice-container { bottom: 140px; gap: 8px; }
   .choice-btn { padding: 12px 16px; font-size: 14px; border-radius: 12px; }
 }
-
 /* ========== HUD 好感度 ========== */
 .hud {
   position: absolute;
@@ -333,21 +305,18 @@ html, body {
   border: 1.5px solid hsl(340, 85%, 88%);
   box-shadow: 0 4px 16px hsl(340 50% 40% / 0.1);
 }
-
 .affection-item {
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 11px;
 }
-
 .affection-name {
-  color: hsl(240, 15%, 35%);
   white-space: nowrap;
   width: 48px;
   font-weight: 500;
+  color: hsl(240, 15%, 35%);
 }
-
 .affection-bar {
   width: 60px;
   height: 6px;
@@ -355,7 +324,6 @@ html, body {
   border-radius: 999px;
   overflow: hidden;
 }
-
 .affection-fill {
   height: 100%;
   background: linear-gradient(90deg, hsl(340, 85%, 70%), hsl(270, 70%, 70%));
@@ -363,22 +331,20 @@ html, body {
   transition: width 0.5s ease;
   box-shadow: 0 0 6px hsl(340 80% 65% / 0.5);
 }
-
 .affection-heart {
-  color: hsl(340, 75%, 60%);
   font-size: 10px;
   width: 12px;
+  color: hsl(340, 75%, 60%);
 }
-
-/* 菜单按钮 */
+/* 修复菜单按钮 可显示可点击 */
 .menu-btn {
   position: absolute;
   top: 12px;
   right: 12px;
-  z-index: 16;
+  z-index: 99;
   width: 40px;
   height: 40px;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: hsl(0 0% 100% / 0.85);
@@ -387,10 +353,9 @@ html, body {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 10px hsl(340 50% 40% / 0.1);
+  pointer-events: auto;
 }
-
-.hud-active + .menu-btn { display: none; }
-
+/* 删掉 hud-active 隐藏规则 */
 /* ========== 主菜单 ========== */
 .main-menu {
   position: absolute;
@@ -405,7 +370,6 @@ html, body {
     hsl(270, 95%, 94%) 100%);
   overflow: hidden;
 }
-
 .main-menu::before {
   content: '';
   position: absolute;
@@ -417,7 +381,6 @@ html, body {
   opacity: 0.5;
   pointer-events: none;
 }
-
 .main-menu::after {
   content: '';
   position: absolute;
@@ -429,7 +392,6 @@ html, body {
   opacity: 0.5;
   pointer-events: none;
 }
-
 .game-title {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: clamp(28px, 6vw, 56px);
@@ -442,7 +404,6 @@ html, body {
   z-index: 1;
   animation: float 4s ease-in-out infinite;
 }
-
 .game-subtitle {
   font-family: '"Ma Shan Zheng"', cursive;
   font-size: clamp(16px, 3vw, 24px);
@@ -451,7 +412,6 @@ html, body {
   z-index: 1;
   opacity: 0.85;
 }
-
 .menu-buttons {
   display: flex;
   flex-direction: column;
@@ -459,7 +419,6 @@ html, body {
   z-index: 1;
   width: min(280px, 80%);
 }
-
 .menu-btn-main {
   padding: 14px 28px;
   background: linear-gradient(135deg, hsl(340, 80%, 70%), hsl(270, 70%, 70%));
@@ -473,16 +432,13 @@ html, body {
   transition: all 0.3s ease;
   letter-spacing: 2px;
 }
-
 .menu-btn-main:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 25px hsl(340 70% 50% / 0.4);
 }
-
 .menu-btn-main:active {
   transform: translateY(0);
 }
-
 .menu-btn-secondary {
   padding: 12px 24px;
   background: hsl(0 0% 100% / 0.7);
@@ -496,13 +452,11 @@ html, body {
   letter-spacing: 1px;
   backdrop-filter: blur(4px);
 }
-
 .menu-btn-secondary:hover {
   background: hsl(340, 100%, 97%);
   border-color: hsl(340, 75%, 72%);
   transform: translateY(-1px);
 }
-
 .deco-hearts {
   position: absolute;
   inset: 0;
@@ -510,19 +464,16 @@ html, body {
   overflow: hidden;
   z-index: 0;
 }
-
 .deco-heart {
   position: absolute;
   color: hsl(340, 80%, 85%);
   opacity: 0.6;
   animation: floatUp 6s ease-in-out infinite;
 }
-
 @keyframes floatUp {
   0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
   50% { transform: translateY(-20px) rotate(10deg); opacity: 0.8; }
 }
-
 /* ========== 章节选择 ========== */
 .chapter-select {
   position: absolute;
@@ -537,7 +488,6 @@ html, body {
     hsl(270, 95%, 94%) 100%);
   overflow-y: auto;
 }
-
 .chapter-title {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: clamp(24px, 5vw, 36px);
@@ -545,7 +495,6 @@ html, body {
   margin-bottom: 24px;
   text-shadow: 2px 2px 0 hsl(340, 100%, 90%);
 }
-
 .chapter-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -553,7 +502,6 @@ html, body {
   width: 100%;
   max-width: 640px;
 }
-
 .chapter-card {
   padding: 16px 18px;
   background: hsl(0 0% 100% / 0.85);
@@ -564,19 +512,16 @@ html, body {
   text-align: left;
   box-shadow: 0 4px 12px hsl(340 60% 50% / 0.08);
 }
-
 .chapter-card:hover:not(.locked) {
   transform: translateY(-2px);
   border-color: hsl(340, 75%, 72%);
   box-shadow: 0 6px 18px hsl(340 70% 50% / 0.15);
 }
-
 .chapter-card.locked {
   opacity: 0.5;
   cursor: not-allowed;
   filter: grayscale(0.5);
 }
-
 .chapter-num {
   font-size: 12px;
   color: hsl(270, 50%, 55%);
@@ -584,20 +529,17 @@ html, body {
   letter-spacing: 1px;
   margin-bottom: 4px;
 }
-
 .chapter-name {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: 18px;
   color: hsl(340, 65%, 45%);
   margin-bottom: 6px;
 }
-
 .chapter-desc {
   font-size: 13px;
   color: hsl(240, 15%, 45%);
   line-height: 1.5;
 }
-
 .back-btn {
   margin-top: 24px;
   padding: 10px 28px;
@@ -610,11 +552,9 @@ html, body {
   cursor: pointer;
   transition: all 0.25s ease;
 }
-
 .back-btn:hover {
   background: hsl(340, 100%, 97%);
 }
-
 /* ========== 游戏内菜单 ========== */
 .game-menu {
   position: absolute;
@@ -626,9 +566,7 @@ html, body {
   align-items: center;
   justify-content: center;
 }
-
 .game-menu.show { display: flex; }
-
 .menu-panel {
   background: linear-gradient(135deg,
     hsl(0, 0%, 100%) 0%,
@@ -640,7 +578,6 @@ html, body {
   max-width: 90vw;
   box-shadow: 0 20px 60px hsl(0 0% 0% / 0.2);
 }
-
 .menu-panel-title {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: 22px;
@@ -648,14 +585,12 @@ html, body {
   text-align: center;
   margin-bottom: 18px;
 }
-
 .menu-panel-btns {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-/* ========== 好感度增长提示 ========== */
+/* ========== 好感弹出提示 ========== */
 .affection-popup {
   position: absolute;
   top: 30%;
@@ -665,14 +600,12 @@ html, body {
   pointer-events: none;
   animation: popupFloat 1.5s ease-out forwards;
 }
-
 @keyframes popupFloat {
   0% { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.8); }
   20% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.1); }
   40% { transform: translateX(-50%) translateY(-5px) scale(1); }
   100% { opacity: 0; transform: translateX(-50%) translateY(-40px) scale(0.9); }
 }
-
 .affection-popup-inner {
   display: flex;
   align-items: center;
@@ -683,13 +616,11 @@ html, body {
   border-radius: 999px;
   box-shadow: 0 4px 20px hsl(340 70% 50% / 0.3);
 }
-
 .affection-popup-text {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: 18px;
   color: hsl(340, 70%, 50%);
 }
-
 /* ========== 结局画面 ========== */
 .ending-screen {
   position: absolute;
@@ -704,8 +635,9 @@ html, body {
     hsl(270, 95%, 94%) 100%);
   padding: 20px;
   text-align: center;
+  /* 新增：拦截所有点击，不会穿透到底层对话框 */
+  pointer-events: all;
 }
-
 .ending-title {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: clamp(28px, 6vw, 48px);
@@ -714,7 +646,6 @@ html, body {
   text-shadow: 2px 2px 0 hsl(340, 100%, 90%);
   animation: fadeIn 1s ease-out;
 }
-
 .ending-text {
   font-size: 16px;
   color: hsl(240, 15%, 35%);
@@ -723,7 +654,6 @@ html, body {
   margin-bottom: 30px;
   animation: slideUp 1s ease-out 0.3s backwards;
 }
-
 /* ========== 快进标识 ========== */
 .ff-indicator {
   position: absolute;
@@ -739,10 +669,8 @@ html, body {
   display: none;
   animation: pulseSoft 1s infinite;
 }
-
 .ff-indicator.show { display: block; }
-
-/* ========== 章节标题过场 ========== */
+/* ========== 章节过场 ========== */
 .chapter-intro {
   position: absolute;
   inset: 0;
@@ -754,8 +682,8 @@ html, body {
   background: hsl(340 50% 15% / 0.7);
   backdrop-filter: blur(4px);
   animation: fadeIn 0.5s ease-out;
+  pointer-events: none;
 }
-
 .chapter-intro-num {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: 20px;
@@ -763,7 +691,6 @@ html, body {
   letter-spacing: 4px;
   margin-bottom: 12px;
 }
-
 .chapter-intro-name {
   font-family: '"ZCOOL KuaiLe"', sans-serif;
   font-size: clamp(28px, 6vw, 48px);
@@ -771,14 +698,12 @@ html, body {
   text-shadow: 0 2px 20px hsl(340 80% 70% / 0.5);
   margin-bottom: 10px;
 }
-
 .chapter-intro-sub {
   font-size: 14px;
   color: hsl(340, 90%, 92%);
   opacity: 0.8;
 }
-
-/* ========== 存档界面 ========== */
+/* ========== 存档面板 ========== */
 .save-slots {
   display: flex;
   flex-direction: column;
@@ -786,7 +711,6 @@ html, body {
   width: 100%;
   max-width: 400px;
 }
-
 .save-slot {
   display: flex;
   justify-content: space-between;
@@ -798,34 +722,28 @@ html, body {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
 .save-slot:hover {
   background: hsl(340, 90%, 95%);
   border-color: hsl(340, 75%, 75%);
 }
-
 .save-slot-info {
   text-align: left;
 }
-
 .save-slot-chapter {
   font-size: 14px;
   font-weight: 600;
   color: hsl(340, 65%, 45%);
 }
-
 .save-slot-detail {
   font-size: 12px;
   color: hsl(240, 10%, 50%);
   margin-top: 2px;
 }
-
 .save-slot-empty {
   color: hsl(240, 10%, 65%);
   font-size: 13px;
 }
-
-/* ========== 旁白/叙述 ========== */
+/* 旁白样式 */
 .narration .char-name { display: none; }
 .narration .dialog-text {
   font-style: italic;
@@ -836,753 +754,388 @@ html, body {
 </head>
 <body>
 <div id="game-root">
-
-  <!-- 背景层 -->
-  <div class="bg-gradient" id="bgLayer"></div>
+  <div class="bg-layer" id="bgLayer"></div>
   <div class="bg-overlay"></div>
-
-  <!-- 角色立绘层 -->
   <div class="char-layer" id="charLayer">
     <img class="char-sprite pos-left"   id="charLeft"   src="" alt="" draggable="false">
     <img class="char-sprite pos-center" id="charCenter" src="" alt="" draggable="false">
     <img class="char-sprite pos-right"  id="charRight"  src="" alt="" draggable="false">
   </div>
-
-  <!-- HUD 好感度 -->
+  <!-- 好感HUD -->
   <div class="hud" id="hud">
     <div class="affection-item" data-char="c20">
       <span class="affection-heart">♡</span>
-      <span class="affection-name">2.0同学</span>
+      <span class="affection-name">2.0</span>
       <div class="affection-bar"><div class="affection-fill" style="width:0%"></div></div>
     </div>
     <div class="affection-item" data-char="c21">
       <span class="affection-heart">♡</span>
-      <span class="affection-name">2.1同学</span>
+      <span class="affection-name">2.1</span>
       <div class="affection-bar"><div class="affection-fill" style="width:0%"></div></div>
     </div>
     <div class="affection-item" data-char="c24">
       <span class="affection-heart">♡</span>
-      <span class="affection-name">2.4同学</span>
+      <span class="affection-name">2.4</span>
       <div class="affection-bar"><div class="affection-fill" style="width:0%"></div></div>
     </div>
     <div class="affection-item" data-char="c32">
       <span class="affection-heart">♡</span>
-      <span class="affection-name">3.2同学</span>
+      <span class="affection-name">3.2</span>
       <div class="affection-bar"><div class="affection-fill" style="width:0%"></div></div>
     </div>
   </div>
-
-  <!-- 菜单按钮 -->
-  <div class="menu-btn" id="menuBtn" title="菜单">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(340, 70%, 55%)" stroke-width="2.5" stroke-linecap="round">
+  <!-- 修复后可见菜单按钮 -->
+  <div class="menu-btn" id="menuBtn" title="游戏菜单">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="hsl(340,70%,55%)" stroke-width="2.5" stroke-linecap="round">
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
     </svg>
   </div>
-
-  <!-- 快进标识 -->
-  <div class="ff-indicator" id="ffIndicator">▶▶ 快进中</div>
-
+  <div class="ff-indicator" id="ffIndicator">▶▶ 快进</div>
   <!-- 对话框 -->
   <div class="dialog-box" id="dialogBox">
     <div class="char-name" id="charName">旁白</div>
     <div class="dialog-text" id="dialogText"></div>
     <div class="triangle" id="dialogTriangle" style="display:none"></div>
   </div>
-
-  <!-- 选项容器 -->
   <div class="choice-container" id="choiceContainer" style="display:none"></div>
-
   <!-- 主菜单 -->
   <div class="main-menu" id="mainMenu">
     <div class="deco-hearts" id="decoHearts"></div>
-    <h1 class="game-title">完了！我被男同学包围了</h1>
+    <h1 class="game-title">完了！我被男同学包围</h1>
     <p class="game-subtitle">～高地探险篇～</p>
     <div class="menu-buttons">
-      <button class="menu-btn-main" id="btnNewGame">开 始 游 戏</button>
-      <button class="menu-btn-secondary" id="btnContinue">继 续 游 戏</button>
-      <button class="menu-btn-secondary" id="btnChapterSelect">章 节 选 择</button>
-      <button class="menu-btn-secondary" id="btnLoadGame">读 取 存 档</button>
+      <button class="menu-btn-main" id="btnNewGame">开始游戏</button>
+      <button class="menu-btn-secondary" id="btnContinue">继续游戏</button>
+      <button class="menu-btn-secondary" id="btnChapterSelect">章节选择</button>
+      <button class="menu-btn-secondary" id="btnLoadGame">读取存档</button>
     </div>
   </div>
-
   <!-- 章节选择 -->
   <div class="chapter-select" id="chapterSelect" style="display:none">
-    <h2 class="chapter-title">📖 章节选择</h2>
+    <h2 class="chapter-title">📖 章节列表</h2>
     <div class="chapter-list" id="chapterList"></div>
-    <button class="back-btn" id="btnChapterBack">返 回</button>
+    <button class="back-btn" id="btnChapterBack">返回</button>
   </div>
-
-  <!-- 游戏内菜单 -->
+  <!-- 游戏弹窗菜单 -->
   <div class="game-menu" id="gameMenu">
     <div class="menu-panel">
-      <div class="menu-panel-title">游 戏 菜 单</div>
+      <div class="menu-panel-title">游戏菜单</div>
       <div class="menu-panel-btns">
         <button class="menu-btn-secondary" id="btnSave">保存进度</button>
-        <button class="menu-btn-secondary" id="btnLoad">读取进度</button>
-        <button class="menu-btn-secondary" id="btnToggleHud">好感度显示</button>
+        <button class="menu-btn-secondary" id="btnLoad">读取存档</button>
+        <button class="menu-btn-secondary" id="btnToggleHud">好感显示开关</button>
         <button class="menu-btn-secondary" id="btnBackToTitle">返回标题</button>
         <button class="menu-btn-secondary" id="btnResume">继续游戏</button>
       </div>
     </div>
   </div>
-
-  <!-- 存档面板 -->
+  <!-- 存档弹窗 -->
   <div class="game-menu" id="saveMenu">
-    <div class="menu-panel" style="min-width: 320px;">
-      <div class="menu-panel-title" id="saveMenuTitle">保存存档</div>
+    <div class="menu-panel" style="min-width:320px">
+      <div class="menu-panel-title" id="saveMenuTitle">存档操作</div>
       <div class="save-slots" id="saveSlots"></div>
-      <button class="back-btn" style="margin-top: 16px; width: 100%;" id="btnSaveBack">返 回</button>
+      <button class="back-btn" id="btnSaveBack" style="width:100%;margin-top:16px">返回</button>
     </div>
   </div>
-
 </div>
-
 <script>
-// ========================================================
 // 资源配置
-// ========================================================
 const CHAR_IMAGES = {
-  c20: 'https://aka.doubaocdn.com/s/VDHzC3SsKH', // 2.0同学
-  c21: 'https://aka.doubaocdn.com/s/AubehhDwb9', // 2.1同学
-  c24: 'https://aka.doubaocdn.com/s/pFGvPCXURB', // 2.4同学
-  c32: 'https://aka.doubaocdn.com/s/tGCbdgNJ2d', // 3.2同学
+  c20: 'https://aka.doubaocdn.com/s/VDHzC3SsKH',
+  c21: 'https://aka.doubaocdn.com/s/AubehhDwb9',
+  c24: 'https://aka.doubaocdn.com/s/pFGvPCXURB',
+  c32: 'https://aka.doubaocdn.com/s/tGCbdgNJ2d',
 };
-
 const CHAR_NAMES = {
-  c20: '2.0同学',
-  c21: '2.1同学',
-  c24: '2.4同学',
-  c32: '3.2同学',
-  mc: '我',
+  c20: '2.0',
+  c21: '2.1',
+  c24: '2.4',
+  c32: '3.2',
   narr: '',
 };
-
 const BG_IMAGES = {
-  school:    'https://aka.doubaocdn.com/s/oFlz5YQIgX',
-  high20:    'https://aka.doubaocdn.com/s/1WjFHqUrZt',
-  high22a:   'https://aka.doubaocdn.com/s/VQGjYTGrpp',
-  high22b:   'https://aka.doubaocdn.com/s/V371EL0T4v',
-  high22c:   'https://aka.doubaocdn.com/s/EdJ6ujNgTo',
-  high22d:   'https://aka.doubaocdn.com/s/9V705nUIa7',
-  high24:    'https://aka.doubaocdn.com/s/GJyKaLZAKp',
-  gradient:  '',
+  hallway: 'https://aka.doubaocdn.com/s/oFlz5YQIgX',
+  library: 'https://aka.doubaocdn.com/s/1WjFHqUrZt',
+  high20: 'https://aka.doubaocdn.com/s/1WjFHqUrZt',
+  high22b: 'https://aka.doubaocdn.com/s/V371EL0T4v',
+  high24: 'https://aka.doubaocdn.com/s/GJyKaLZAKp',
+  classroom: 'https://aka.doubaocdn.com/s/EdJ6ujNgTo',
+  night: 'https://aka.doubaocdn.com/s/9V705nUIa7',
 };
-
-// 渐变色背景（作为缺少背景时的fallback）
 const BG_GRADIENTS = {
-  hallway:  'linear-gradient(180deg, hsl(200, 70%, 95%) 0%, hsl(200, 60%, 88%) 100%)',
-  library:  'linear-gradient(180deg, hsl(35, 60%, 94%) 0%, hsl(30, 50%, 85%) 100%)',
- 操场:     'linear-gradient(180deg, hsl(200, 80%, 92%) 0%, hsl(130, 50%, 85%) 60%, hsl(100, 40%, 75%) 100%)',
- 教室:     'linear-gradient(180deg, hsl(45, 80%, 97%) 0%, hsl(35, 60%, 90%) 100%)',
-  sunset:   'linear-gradient(180deg, hsl(20, 90%, 85%) 0%, hsl(340, 80%, 80%) 60%, hsl(270, 60%, 75%) 100%)',
-  night:    'linear-gradient(180deg, hsl(240, 70%, 15%) 0%, hsl(270, 60%, 25%) 100%)',
-  rooftop:  'linear-gradient(180deg, hsl(200, 85%, 90%) 0%, hsl(180, 60%, 85%) 100%)',
-  clubroom: 'linear-gradient(180deg, hsl(40, 40%, 90%) 0%, hsl(30, 30%, 80%) 100%)',
+  hallway: 'linear-gradient(180deg,hsl(200,70%,95%)0%,hsl(200,60%,88%)100%)',
+  library: 'linear-gradient(180deg,hsl(35,60%,94%)0%,hsl(30,50%,85%)100%)',
+  high20: 'linear-gradient(180deg,hsl(45,80%,97%)0%,hsl(35,60%,90%)100%)',
+  high22b: 'linear-gradient(180deg,hsl(200,85%,90%)0%,hsl(180,60%,85%)100%)',
+  high24: 'linear-gradient(180deg,hsl(20,90%,85%)0%,hsl(340,80%,80%)60%,hsl(270,60%,75%)100%)',
+  classroom: 'linear-gradient(180deg,hsl(45,80%,97%)0%,hsl(35,60%,90%)100%)',
+  night: 'linear-gradient(180deg,hsl(240,70%,15%)0%,hsl(270,60%,25%)100%)',
 };
-
-// ========================================================
-// 游戏状态
-// ========================================================
+// 游戏全局状态
 const state = {
-  screen: 'menu', // menu / chapterSelect / playing / ending / menuOpen
+  screen: 'menu',
   currentChapter: 0,
   currentLine: 0,
-  affection: { c20: 0, c21: 0, c24: 0, c32: 0 },
+  affection: { c20:0,c21:0,c24:0,c32:0 },
   hudVisible: true,
   fastForward: false,
-  readFlags: {}, // 已读标记
+  readFlags: {},
   isTyping: false,
   typeTimer: null,
   currentText: '',
-  charsOnScreen: { left: null, center: null, right: null },
+  charsOnScreen: {left:null,center:null},
   activeChapter: null,
-  chapterUnlocked: [true, false, false, false, false, false, false], // 7章
-  menuMode: 'save', // save / load
+  chapterUnlocked: [true,false,false,false,false,false,false],
+  menuMode: 'save',
+  introPlaying: false, // 新增动画锁
 };
-
 const AFFECTION_MAX = 100;
-
-// ========================================================
-// 剧情数据
-// ========================================================
-// 每章是一个数组，每一项是一行对话
-// {speaker, text, bg?, charLeft?, charCenter?, charRight?, focus?, choice?, effect?, narration?}
-// choice: [{text, next?, affection?}]  选项跳转到 label 用 goto，下一行继续用 next: 'continue'
-
+// 完整剧情数据（已补全隐藏章）
 function getChapterData(chapterIdx) {
   const chapters = [
-    // ========== 第一章：转学生的初遇（共通线）==========
+    // 第一章 四人走廊初遇
     [
-      { narration: true, text: '今天，是我转学来到新学校的第一天。', bg: 'school' },
-      { narration: true, text: '背着沉甸甸的书包，我站在校门口，深吸了一口气。' },
-      { speaker: 'mc', text: '（呼……新学校，新同学，一切都是新的开始。）' },
-      { speaker: 'mc', text: '（希望……能顺利融入这个班级吧。）' },
-      { narration: true, text: '我抱着一摞新书，小心翼翼地走在走廊上。' },
-      { narration: true, text: '结果——' },
-      { effect: 'shake', narration: true, text: '"砰！"' },
-      { speaker: 'mc', text: '哎呀！' },
-      { charLeft: 'c21', speaker: 'c21', text: '呜呜呜对不起对不起！我不是故意的！', focus: 'left' },
-      { speaker: 'c21', text: '我我我刚才在找教室，然后就没看路，然后就……呜呜呜书都掉了！' },
-      { speaker: 'mc', text: '（这个人……怎么比我还慌张？）' },
-      { speaker: 'mc', text: '没关系的！我帮你一起捡吧！' },
-      { speaker: 'c21', text: '真的吗？你人好好啊！谢谢谢谢！' },
-      { narration: true, text: '蹲下来捡书的时候，我偷偷打量了他一下。' },
-      { narration: true, text: '透明框眼镜，笑得像只大狗狗一样的男生……感觉有点天然呆呢。' },
-      { speaker: 'c21', text: '啊！我是二年级的2.1同学！你是新转来的同学吧？我好像没见过你！' },
-      { speaker: 'mc', text: '嗯，我今天第一天来报到。请多关照。' },
-      { speaker: 'c21', text: '嘿嘿，请多关照！啊糟了！我要迟到了！' },
-      { speaker: 'c21', text: '那个……我们班教室在哪来着……' },
-      { speaker: 'mc', text: '（……果然是个迷糊蛋。）' },
-      { speaker: 'c21', text: '那我先走啦！下次见！拜拜——' },
-      { narration: true, text: '说完，他抱着书慌慌张张地跑走了，方向……好像是反的。' },
-      { speaker: 'mc', text: '……唉。希望他能找到教室吧。' },
-      { narration: true, text: '和2.1同学告别后，我决定先去图书馆熟悉一下环境。' },
-      { bg: 'library', narration: true, text: '图书馆里安静极了，阳光透过窗户洒在书架上，空气中弥漫着旧书的味道。' },
-      { charRight: 'c20', speaker: 'c20', text: '……你好，请问有什么需要帮忙的吗？', focus: 'right' },
-      { speaker: 'mc', text: '啊，你好！我是今天新转来的同学，想找一下二年级的参考书目……' },
-      { speaker: 'c20', text: '新转来的同学吗？欢迎。二年级的参考书在那边第三排书架，我带你去吧。' },
-      { narration: true, text: '他戴着黑框眼镜，说话的声音温温柔柔的，让人感觉很安心。' },
-      { speaker: 'c20', text: '就是这里了。如果找不到具体的书，可以告诉我书名，我帮你找。' },
-      { speaker: 'mc', text: '谢谢你！那个……你叫什么名字呀？' },
-      { speaker: 'c20', text: '我叫2.0，也是二年级的。' },
-      { speaker: 'c20', text: '如果学习上有什么不懂的地方，随时可以来图书馆找我。' },
-      { speaker: 'mc', text: '（好温柔的人啊……而且感觉很聪明的样子。）' },
-      { speaker: 'mc', text: '嗯！谢谢你，2.0同学！' },
-      { speaker: 'c20', text: '不客气。', focus: 'right' },
-      { narration: true, text: '他浅浅地笑了一下，然后抱着书回到了座位上。' },
-      { narration: true, text: '从图书馆出来后，我顺着走廊走到了操场边。' },
-      { bg: '操场', narration: true, text: '操场上，几个男生正在打篮球，其中一个人的身影格外引人注目。' },
-      { charLeft: 'c24', speaker: 'c24', text: '嘿！那边的新同学！', focus: 'left' },
-      { speaker: 'mc', text: '欸？叫我吗？' },
-      { speaker: 'c24', text: '对啊！你是今天转来的吧？我叫2.4！二年级的！' },
-      { narration: true, text: '他一边擦着汗一边跑过来，脸上洋溢着灿烂的笑容。' },
-      { speaker: 'c24', text: '欢迎来到我们学校！怎么样，要不要一起运动一下？' },
-      { speaker: 'mc', text: '啊……我今天第一天来，还没熟悉环境呢。' },
-      { speaker: 'c24', text: '没关系没关系！以后有的是机会！' },
-      { speaker: 'c24', text: '我每天下午都在操场上运动，你有空就过来找我玩啊！' },
-      { speaker: 'mc', text: '好……好的！谢谢你！' },
-      { speaker: 'c24', text: '不用谢！那我继续打球去啦！拜拜——' },
-      { narration: true, text: '他挥挥手，又跑回了球场。整个人就像小太阳一样，充满了活力。' },
-      { narration: true, text: '终于到了放学的时候，我回到教室想拿落下的东西。' },
-      { bg: '教室', narration: true, text: '夕阳照进教室，在最后一排的座位上，还坐着一个人。' },
-      { charRight: 'c32', speaker: 'c32', text: '……', focus: 'right' },
-      { speaker: 'mc', text: '（那个人……是在看窗外吗？）' },
-      { narration: true, text: '他似乎注意到了我的目光，冷冷地瞥了我一眼。' },
-      { speaker: 'c32', text: '看什么。' },
-      { speaker: 'mc', text: '啊、抱歉！我只是回来拿东西的……' },
-      { speaker: 'c32', text: '……随便你。' },
-      { narration: true, text: '说完，他就转过头去，不再理我了。' },
-      { speaker: 'mc', text: '（好、好高冷的人啊……感觉不太好接近的样子。）' },
-      { narration: true, text: '我赶紧拿了东西，小声说了句"再见"就离开了教室。' },
-      { narration: true, text: '走在回家的路上，我回想着今天遇到的四个人。' },
-      { speaker: 'mc', text: '迷糊又可爱的2.1同学……' },
-      { speaker: 'mc', text: '温柔又聪明的2.0同学……' },
-      { speaker: 'mc', text: '阳光又有活力的2.4同学……' },
-      { speaker: 'mc', text: '还有……看起来冷冷的3.2同学。' },
-      { speaker: 'mc', text: '这个学校的男生，都好有个性啊……' },
-      { speaker: 'mc', text: '（接下来的校园生活，一定会很有趣吧。）' },
-      { ending: true, nextChapter: 1, text: '第一章·完', chapterEnd: true },
+      {narration:true,text:"午休下课走廊人来人往，2.1抱着一摞练习册只顾低头看活动表，完全没看前方。",bg:"hallway"},
+      {charLeft:"c21",speaker:"c21",text:"糟了活动室在哪层……",focus:"left"},
+      {narration:true,text:"下一秒直直撞上缓步走来的2.0，书本哗啦散落一地。"},
+      {speaker:"c21",text:"对不起对不起！我没看路！"},
+      {charRight:"c20",speaker:"c20",text:"慢点，我帮你一起收拾。",focus:"right"},
+      {narration:true,text:"两人蹲下来捡本子时，刚跑完步的2.4快步凑过来。"},
+      {charLeft:"c24",speaker:"c24",text:"你们在干嘛？我发现几处楼顶高地！",focus:"left"},
+      {narration:true,text:"走廊窗边独自靠墙的3.2远远看着这群喧闹的人，没有上前。"},
+      {charRight:"c32",speaker:"c32",text:"吵吵闹闹没意思。",focus:"right"},
+      {speaker:"c21",text:"3.2要不要一起去楼顶逛逛？"},
+      {speaker:"c32",text:"没兴趣。"},
+      {narration:true,text:"四人第一次完整碰面，所有双人、三人结伴故事从此开启。"},
+      {ending:true,nextChapter:1,text:"第一章 · 走廊初遇",chapterEnd:true},
     ],
-
-    // ========== 第二章：温柔的图书馆时光（2.0线）==========
+    // 第二章 2.1 & 3.2 图书馆（无2.0）
     [
-      { narration: true, text: '几天后的午休时间，我被一道数学题难住了。', bg: 'library' },
-      { speaker: 'mc', text: '（这道题……怎么解都不对。要不去图书馆找找参考资料吧。）' },
-      { narration: true, text: '我抱着习题册来到图书馆，果然在老位置看到了2.0同学。' },
-      { charRight: 'c20', speaker: 'c20', text: '嗯？是你啊。怎么了，有什么事吗？', focus: 'right' },
-      { speaker: 'mc', text: '那个……我有一道题不太会，想找找参考书……' },
-      { speaker: 'c20', text: '哪道题？我看看。' },
-      { narration: true, text: '我把习题册递给他，他认真地看了一会儿。' },
-      { speaker: 'c20', text: '这道题啊，用另一种方法会简单很多。我给你讲讲吧。' },
-      { speaker: 'mc', text: '真的可以吗？谢谢你！' },
-      { speaker: 'c20', text: '嗯。你看，这里先做一个辅助线……' },
-      { narration: true, text: '他的声音很轻，却讲得清清楚楚，一点一点地帮我理清思路。' },
-      { narration: true, text: '不知道为什么，看着他认真的侧脸，我的心跳有点快。' },
-      { speaker: 'c20', text: '……这样解的话，答案就出来了。听懂了吗？' },
-      { speaker: 'mc', text: '嗯！谢谢你！你讲得好清楚啊！' },
-      { speaker: 'c20', text: '没什么，你能听懂就好。' },
-      { narration: true, text: '他推了推眼镜，嘴角微微上扬。' },
-      { choice: [
-        { text: '问他为什么总是一个人看书', effect: 'c20+10', next: 'q1a' },
-        { text: '真心感谢他的帮助', effect: 'c20+10', next: 'q1b' },
-        { text: '邀请他一起去食堂', effect: 'c20+20', next: 'q1c' },
+      {narration:true,text:"午休图书馆十分安静，2.1翻遍书架找不到数学复习资料。",bg:"library"},
+      {charLeft:"c21",speaker:"c21",text:"奇怪昨天还放在这的卷子去哪了？",focus:"left"},
+      {narration:true,text:"四处张望，看见独自靠窗看书的3.2，连忙上前搭话。"},
+      {speaker:"c21",text:"3.2你知道高二习题放哪吗？"},
+      {charRight:"c32",speaker:"c32",text:"管理员昨天整理，移到东侧第三层内侧。",focus:"right"},
+      {narration:true,text:"2.1跑去翻找，抱着整套习题回到座位旁。"},
+      {speaker:"c21",text:"多亏了你！我找半天都没找到。"},
+      {speaker:"c32",text:"顺手看见而已。"},
+      {narration:true,text:"2.1拉椅子坐到旁边，不停提起学校各个楼顶高地。"},
+      {speaker:"c21",text:"听说2.2楼顶有台球桌，陪我一起去好不好？"},
+      {speaker:"c32",text:"你连教学楼路都分不清，上去只会迷路。"},
+      {choice:[
+        {text:"软磨约周末台球局",effect:"c21+18,c32+10",next:"optA"},
+        {text:"安静看书不打扰他",effect:"c21+10,c32+12",next:"optB"},
+        {text:"问他为什么总独自待图书馆",effect:"c21+12,c32+15",next:"optC"},
       ]},
-      // 选项1a
-      { label: 'q1a', speaker: 'mc', text: '那个……2.0同学，你为什么总是一个人在图书馆看书啊？' },
-      { speaker: 'c20', text: '嗯……因为这里很安静，能静下心来看书吧。' },
-      { speaker: 'c20', text: '而且，书里的世界很有趣。比起热闹，我更喜欢这种安静的时光。' },
-      { speaker: 'mc', text: '这样啊……感觉你知道好多东西。' },
-      { speaker: 'c20', text: '只是看的书比较多而已。如果你愿意的话，我可以推荐几本给你。' },
-      { speaker: 'mc', text: '真的吗？太好了！' },
-      { speaker: 'c20', text: '（轻笑）你喜欢什么类型的？' },
-      { goto: 'end' },
-
-      // 选项1b
-      { label: 'q1b', speaker: 'mc', text: '真的太感谢你了！没有你的话我肯定解不出来。' },
-      { speaker: 'c20', text: '不用这么客气。同学之间互相帮忙是应该的。' },
-      { speaker: 'c20', text: '而且……你很聪明，一点就通。教你很有成就感。' },
-      { speaker: 'mc', text: '（！他夸我了……）' },
-      { speaker: 'mc', text: '哪、哪有……我还差得远呢。' },
-      { speaker: 'c20', text: '谦虚了。以后有不懂的，随时可以来问我。' },
-      { goto: 'end' },
-
-      // 选项1c
-      { label: 'q1c', speaker: 'mc', text: '那个……2.0同学，你午饭吃了吗？要不要一起去食堂？' },
-      { speaker: 'c20', text: '食堂吗……' },
-      { narration: true, text: '他似乎愣了一下，然后耳尖微微泛红。' },
-      { speaker: 'c20', text: '……好啊。正好我也准备去吃饭。' },
-      { speaker: 'mc', text: '（他、他答应了！）' },
-      { speaker: 'c20', text: '走吧。我知道食堂三楼有一家味道还不错。' },
-      { speaker: 'mc', text: '嗯！' },
-      { narration: true, text: '一起走在去食堂的路上，我的心怦怦直跳。' },
-      { goto: 'end' },
-
-      // 结尾
-      { label: 'end', narration: true, text: '不知不觉，午休时间快要结束了。' },
-      { speaker: 'c20', text: '时间差不多了，我也该回教室了。' },
-      { speaker: 'mc', text: '嗯……今天真的谢谢你。' },
-      { speaker: 'c20', text: '不用谢。' },
-      { narration: true, text: '他看着我，露出了一个温柔的笑容。' },
-      { speaker: 'c20', text: '下次有问题，还可以来找我。' },
-      { speaker: 'mc', text: '（好温柔……）' },
-      { speaker: 'mc', text: '嗯！一定！' },
-      { ending: true, nextChapter: 2, text: '第二章·完', chapterEnd: true },
+      {label:"optA",narration:true,text:"2.1晃着胳膊不停念叨台球多好玩。"},
+      {speaker:"c32",text:"周末最多抽半小时陪你上去。"},
+      {speaker:"c21",text:"半小时也够！"},
+      {goto:"endSec2"},
+      {label:"optB",narration:true,text:"见对方不爱搭话，2.1安静低头整理错题。"},
+      {speaker:"c32",text:"安静看书更舒服。"},
+      {speaker:"c21",text:"那我之后再跟你说高地的事。"},
+      {goto:"endSec2"},
+      {label:"optC",narration:true,text:"好奇他很少和别人结伴的原因。"},
+      {speaker:"c32",text:"人群太吵，在这里不用应付多余交谈。"},
+      {speaker:"c21",text:"我之后来图书馆小声说话！"},
+      {goto:"endSec2"},
+      {label:"endSec2",narration:true,text:"午休铃声响起，两人收拾书本准备离开。"},
+      {speaker:"c21",text:"下周再来找你约台球！"},
+      {speaker:"c32",text:"看当天时间。"},
+      {ending:true,nextChapter:2,text:"第二章 · 图书馆闲聊｜2.1&3.2",chapterEnd:true},
     ],
-
-    // ========== 第三章：迷糊蛋的大冒险（2.1线）==========
+    // 第三章 2.1 & 2.4 2.4高地（无2.0）
     [
-      { narration: true, text: '某天放学后，我在走廊上又看到了那个熟悉的身影。', bg: 'hallway' },
-      { charLeft: 'c21', speaker: 'c21', text: '唔……这里是……二楼还是三楼来着？', focus: 'left' },
-      { speaker: 'mc', text: '（是2.1同学！又迷路了吗……）' },
-      { speaker: 'mc', text: '2.1同学？你又在找教室吗？' },
-      { speaker: 'c21', text: '啊！是你！' },
-      { speaker: 'c21', text: '嘿嘿……那个，我要去活动室，但不知道走到哪了……' },
-      { speaker: 'mc', text: '活动室在另一栋楼哦。这里是教学楼。' },
-      { speaker: 'c21', text: '咦——！我又走错楼了吗？！怎么会这样——' },
-      { speaker: 'c21', text: '呜呜呜我也不想的啊，可是走着走着就不知道自己在哪了……' },
-      { speaker: 'mc', text: '（好、好可怜……又好可爱。）' },
-      { choice: [
-        { text: '笑着说他真的很迷糊', effect: 'c21+10', next: 'q1a' },
-        { text: '耐心地帮他看地图', effect: 'c21+10', next: 'q1b' },
-        { text: '牵起他的手说"跟我走"', effect: 'c21+20', next: 'q1c' },
+      {narration:true,text:"周五傍晚无晚自习，2.1乱爬楼梯误登上全校最高2.4天台。",bg:"high24"},
+      {charLeft:"c21",speaker:"c21",text:"原来这里能看见杨浦大桥！我找两天了！",focus:"left"},
+      {narration:true,text:"天台石台放着冰镇柠檬，刚慢跑完的2.4靠栏杆吹风。"},
+      {charRight:"c24",speaker:"c24",text:"你怎么跑到这？很少有人找到这个入口。",focus:"right"},
+      {speaker:"c21",text:"随便走上来的，这里视野也太开阔了！"},
+      {speaker:"c24",text:"我每天傍晚都来放松，特意囤了柠檬饮品。"},
+      {narration:true,text:"2.4拧开一瓶递过去，两人并肩远眺江面大桥。"},
+      {speaker:"c24",text:"除这里还有养鱼楼顶、台球活动室高地。"},
+      {speaker:"c21",text:"我一直想去台球楼顶，但不敢一个人上楼！"},
+      {speaker:"c24",text:"有空我陪你上去打球。"},
+      {choice:[
+        {text:"约明天放学后台球",effect:"c21+15,c24+18",next:"optA3"},
+        {text:"闲聊课后各自放松方式",effect:"c21+12,c24+12",next:"optB3"},
+        {text:"提议喊3.2三人一起探险",effect:"c21+20,c24+10",next:"optC3"},
       ]},
-      // 选项1a
-      { label: 'q1a', speaker: 'mc', text: '噗……你真的好迷糊啊。' },
-      { speaker: 'c21', text: '呜……连你也笑我……' },
-      { speaker: 'mc', text: '好啦好啦，不笑你了。我带你过去吧？' },
-      { speaker: 'c21', text: '真的吗？！你人也太好了吧！' },
-      { speaker: 'c21', text: '谢谢你谢谢你！你是我的救命恩人！' },
-      { speaker: 'mc', text: '（夸张……不过挺可爱的。）' },
-      { goto: 'walk' },
-
-      // 选项1b
-      { label: 'q1b', speaker: 'mc', text: '你有学校地图吗？我帮你看看怎么走。' },
-      { speaker: 'c21', text: '有的有的！在这……诶？在哪来着……' },
-      { narration: true, text: '他手忙脚乱地在书包里翻找，东西掉出来一大堆。' },
-      { speaker: 'mc', text: '（……连地图都找不到，这可怎么办啊。）' },
-      { speaker: 'c21', text: '啊找到了！在这里！' },
-      { speaker: 'mc', text: '嗯……从这里下楼，穿过操场，然后往右走就是活动楼了。' },
-      { speaker: 'c21', text: '哦——原来是这样！我完全走反了方向！' },
-      { speaker: 'mc', text: '（我就知道……）' },
-      { goto: 'walk' },
-
-      // 选项1c
-      { label: 'q1c', narration: true, text: '看着他手忙脚乱的样子，我忍不住伸出了手。' },
-      { speaker: 'mc', text: '来，跟我走。我带你去。' },
-      { speaker: 'c21', text: '……欸？' },
-      { narration: true, text: '他愣了一下，然后脸"唰"地一下红了。' },
-      { speaker: 'c21', text: '手、手手手……牵着手？！' },
-      { speaker: 'mc', text: '这、这样就不会走丢了嘛……' },
-      { speaker: 'c21', text: '嗯……嗯……' },
-      { narration: true, text: '他小心翼翼地把手放了上来，手心暖暖的。' },
-      { goto: 'walk' },
-
-      // 走路剧情
-      { label: 'walk', narration: true, text: '我带着2.1同学往活动楼走去。' },
-      { narration: true, text: '路上，他一直在叽叽喳喳地说个不停。' },
-      { speaker: 'c21', text: '对了对了！你知道吗？学校里有好多秘密基地哦！' },
-      { speaker: 'mc', text: '秘密基地？' },
-      { speaker: 'c21', text: '嗯！就是大家说的"高地"啦！学校里有好几个神秘的地方！' },
-      { speaker: 'c21', text: '啊——！' },
-      { speaker: 'mc', text: '怎么了？' },
-      { speaker: 'c21', text: '那边！我看到了一只超可爱的猫咪！' },
-      { narration: true, text: '话音未落，他就朝着一个奇怪的方向跑了过去。' },
-      { speaker: 'mc', text: '等等——2.1同学！那边是死路啊！' },
-      { narration: true, text: '果然，没过多久就传来了他的声音。' },
-      { speaker: 'c21', text: '呜……出不去了……' },
-      { speaker: 'mc', text: '（唉……真是让人放心不下。）' },
-      { narration: true, text: '我绕过去找到他的时候，他正蹲在墙角，可怜巴巴的。' },
-      { speaker: 'c21', text: '对不起……又给你添麻烦了……' },
-      { speaker: 'mc', text: '好啦，快跟我走吧。下次不许乱跑了哦。' },
-      { speaker: 'c21', text: '嗯！' },
-      { narration: true, text: '终于，我们到达了活动楼门口。' },
-      { speaker: 'c21', text: '到了到了！谢谢你！真的太感谢你了！' },
-      { narration: true, text: '他红着脸挠了挠头。' },
-      { speaker: 'c21', text: '那个……你人真好……' },
-      { speaker: 'c21', text: '以、以后我迷路了……还可以找你吗？' },
-      { speaker: 'mc', text: '（……这是打算经常迷路吗。）' },
-      { speaker: 'mc', text: '当然可以啦。随时欢迎。' },
-      { speaker: 'c21', text: '太好了！嘿嘿……' },
-      { narration: true, text: '他笑得像个得到糖的小孩一样灿烂。' },
-      { ending: true, nextChapter: 3, text: '第三章·完', chapterEnd: true },
+      {label:"optA3",narration:true,text:"2.1瞬间兴奋敲定第二天天台集合。"},
+      {speaker:"c24",text:"我提前带球杆等你。"},
+      {speaker:"c21",text:"终于能打楼顶台球了！"},
+      {goto:"endSec3"},
+      {label:"optB3",narration:true,text:"两人聊训练和迷路日常趣事。"},
+      {speaker:"c24",text:"你迷路直接找我带路。"},
+      {speaker:"c21",text:"太感谢了，我总分不清楼梯。"},
+      {goto:"endSec3"},
+      {label:"optC3",narration:true,text:"提起图书馆遇见的3.2，邀约三人组队。"},
+      {speaker:"c24",text:"可以试着邀请他一起。"},
+      {speaker:"c21",text:"明天打完台球再去找他！"},
+      {goto:"endSec3"},
+      {label:"endSec3",narration:true,text:"夕阳铺满江面，两人约好次日天台碰面。"},
+      {speaker:"c24",text:"明天别再迷路迟到。"},
+      {speaker:"c21",text:"这次一定记好路线！"},
+      {ending:true,nextChapter:3,text:"第三章 · 天台晚风｜2.1&2.4",chapterEnd:true},
     ],
-
-    // ========== 第四章：操场上的汗水与青春（2.4线）==========
+    // 第四章 2.0 & 3.2 教室双人
     [
-      { narration: true, text: '下午的体育课自由活动时间，我坐在操场边休息。', bg: '操场' },
-      { narration: true, text: '篮球场上，2.4同学正在打球，汗水湿透了他的球衣。' },
-      { charLeft: 'c24', speaker: 'c24', text: '喝——！', focus: 'left' },
-      { narration: true, text: '他纵身一跃，篮球"唰"地一声空心入网。' },
-      { speaker: 'mc', text: '（好厉害……）' },
-      { narration: true, text: '似乎注意到了我的视线，他朝这边挥了挥手。' },
-      { speaker: 'c24', text: '哟！新同学！过来一起玩啊！' },
-      { speaker: 'mc', text: '我、我吗？我不太会打球……' },
-      { speaker: 'c24', text: '没关系没关系！不会我教你啊！' },
-      { narration: true, text: '他跑了过来，一边擦汗一边喘气。' },
-      { speaker: 'c24', text: '怎么样，要不要试试？很简单的！' },
-      { choice: [
-        { text: '为他加油打气', effect: 'c24+10', next: 'q1a' },
-        { text: '递给他一瓶水', effect: 'c24+10', next: 'q1b' },
-        { text: '说"你运动的时候好帅"', effect: 'c24+20', next: 'q1c' },
+      {narration:true,text:"放学半小时，教室只剩整理笔记2.0、独自喂猫3.2。",bg:"classroom"},
+      {charLeft:"c20",speaker:"c20",text:"你每天放学都留下来喂橘猫吗？我楼顶养小鱼。",focus:"left"},
+      {charRight:"c32",speaker:"c32",text:"只是顺路，不用多关注。",focus:"right"},
+      {narration:true,text:"2.0从包里拿出观赏鱼饲料递给他。"},
+      {speaker:"c20",text:"楼顶鱼池每条鱼我都取名，有空可以上去散心。"},
+      {speaker:"c32",text:"我对养鱼没兴趣，只是收下心意。"},
+      {narration:true,text:"嘴上冷淡，却悄悄把饲料收进书包侧袋，耳尖泛红。"},
+      {speaker:"c20",text:"想安静独处随时跟我说。"},
+      {speaker:"c32",text:"暂时没有空闲。"},
+      {choice:[
+        {text:"安静不打扰一人一猫",effect:"c20+10,c32+10",next:"optA4"},
+        {text:"提起2.1、2.4高地邀约",effect:"c20+15,c32+5",next:"optB4"},
+        {text:"夸赞他对待小动物温柔",effect:"c20+13,c32+13",next:"optC4"},
       ]},
-      // 选项1a
-      { label: 'q1a', speaker: 'mc', text: '我就不打了，不过我可以为你加油！' },
-      { speaker: 'c24', text: '真的吗？！太好了！' },
-      { speaker: 'c24', text: '有人加油的话，我会更有动力的！' },
-      { narration: true, text: '他笑得像个大男孩一样，然后兴冲冲地跑回了球场。' },
-      { speaker: 'c24', text: '你们等着！我要认真了！' },
-      { speaker: 'mc', text: '加油——！' },
-      { narration: true, text: '接下来的时间里，他就像开了挂一样，连续投中了好几个球。' },
-      { speaker: 'mc', text: '（好厉害……是因为我在加油吗？有点开心。）' },
-      { goto: 'end' },
-
-      // 选项1b
-      { label: 'q1b', narration: true, text: '我从包里拿出一瓶水递给他。' },
-      { speaker: 'mc', text: '你流了好多汗，喝点水吧。' },
-      { speaker: 'c24', text: '哇！谢谢！你人真好！' },
-      { narration: true, text: '他接过水，咕咚咕咚地喝了起来，喉结一动一动的。' },
-      { speaker: 'mc', text: '（……我在看什么啊！）' },
-      { speaker: 'c24', text: '呼——好喝！' },
-      { speaker: 'c24', text: '你怎么知道我正好渴了？太懂我了吧！' },
-      { speaker: 'mc', text: '只是……刚好带了而已。' },
-      { speaker: 'c24', text: '嘿嘿，谢啦！' },
-      { goto: 'end' },
-
-      // 选项1c
-      { label: 'q1c', speaker: 'mc', text: '那个……你运动的时候，好帅啊。' },
-      { speaker: 'c24', text: '……啊？' },
-      { narration: true, text: '他愣了一下，然后脸"唰"地一下红了。' },
-      { speaker: 'c24', text: '帅、帅吗？哈哈哈……还好吧……' },
-      { speaker: 'c24', text: '那个……谢谢啊……第一次有人这么说……' },
-      { narration: true, text: '他挠了挠头，耳根子都红透了，完全不像平时的样子。' },
-      { speaker: 'mc', text: '（原来……他也会害羞啊。好可爱。）' },
-      { goto: 'end' },
-
-      // 结尾
-      { label: 'end', narration: true, text: '不一会儿，下课铃响了。' },
-      { speaker: 'c24', text: '啊，下课了。时间过得好快啊。' },
-      { speaker: 'c24', text: '那个……谢谢你今天来看我打球。' },
-      { narration: true, text: '他挠了挠头，笑得有些不好意思。' },
-      { speaker: 'c24', text: '那什么……你以后常来看我打球吧！' },
-      { speaker: 'c24', text: '有人加油的话，我感觉自己能变得更强！' },
-      { speaker: 'mc', text: '（好直白……但是好开心。）' },
-      { speaker: 'mc', text: '嗯！我会的！' },
-      { speaker: 'c24', text: '太好了！一言为定！' },
-      { narration: true, text: '夕阳下，他的笑容格外耀眼。' },
-      { ending: true, nextChapter: 4, text: '第四章·完', chapterEnd: true },
+      {label:"optA4",narration:true,text:"2.0退回座位整理笔记，留出独处空间。"},
+      {speaker:"c32",text:"不用刻意迁就我。"},
+      {speaker:"c20",text:"不想打扰你和小猫相处。"},
+      {goto:"endSec4"},
+      {label:"optB4",narration:true,text:"说起另外两人约高地探险的事。"},
+      {speaker:"c32",text:"一群人太吵闹。"},
+      {speaker:"c20",text:"不想凑热闹可以单独找我去鱼池。"},
+      {goto:"endSec4"},
+      {label:"optC4",narration:true,text:"直白说出他外冷内热的细心。"},
+      {speaker:"c32",text:"只是普通对待小动物。"},
+      {speaker:"c20",text:"长期投喂本身就是柔软的心思。"},
+      {goto:"endSec4"},
+      {label:"endSec4",narration:true,text:"天色变暗，两人一前一后走出教室。"},
+      {speaker:"c32",text:"饲料我收下，有空去看鱼池。"},
+      {ending:true,nextChapter:4,text:"第四章 · 教室独处｜2.0&3.2",chapterEnd:true},
     ],
-
-    // ========== 第五章：教室角落里的秘密（3.2线）==========
+    // 第五章 2.0+2.1+3.2 三人2.2台球高地
     [
-      { narration: true, text: '某天放学后，我发现自己把笔记本落在了教室里。', bg: '教室' },
-      { narration: true, text: '当我回到教室时，发现灯还亮着。' },
-      { speaker: 'mc', text: '（咦？还有人在吗？）' },
-      { narration: true, text: '我悄悄推开门，看到了意想不到的一幕。' },
-      { charRight: 'c32', narration: true, text: '3.2同学坐在窗边，手里拿着……猫粮？', focus: 'right' },
-      { speaker: 'c32', text: '……慢点儿吃，别呛着。' },
-      { narration: true, text: '窗台上蹲着一只橘猫，正低头吃着他手里的猫粮。' },
-      { speaker: 'c32', text: '你这家伙，最近又胖了。再吃下去就跳不上窗台了。' },
-      { narration: true, text: '他的声音很轻，跟平时冷冷的样子完全不一样。' },
-      { speaker: 'mc', text: '（原来……他在喂猫？！）' },
-      { speaker: 'mc', text: '（怎么办……要打招呼吗？还是偷偷走掉？）' },
-      { choice: [
-        { text: '假装没看到，悄悄离开', effect: 'c32+10', next: 'q1a' },
-        { text: '小声说"你其实很温柔嘛"', effect: 'c32+10', next: 'q1b' },
-        { text: '主动和他搭话', effect: 'c32+20', next: 'q1c' },
+      {narration:true,text:"周六下午2.2废弃楼顶，完整闲置台球桌摆在角落。",bg:"high22b"},
+      {charLeft:"c21",speaker:"c21",text:"3.2你居然提前到！我找一节课才爬上来！",focus:"left"},
+      {charCenter:"c32",speaker:"c32",text:"在家无事上来吹风。",focus:"center"},
+      {narration:true,text:"没过多久抱着矿泉水的2.0走上天台。"},
+      {charRight:"c20",speaker:"c20",text:"听2.1说约台球，顺路带饮用水。",focus:"right"},
+      {speaker:"c21",text:"现在我们三人正好分组对战！"},
+      {speaker:"c32",text:"他握杆姿势完全错误，只会失误。"},
+      {speaker:"c20",text:"我可以简单教基础动作。"},
+      {narration:true,text:"2.0示范标准握杆，2.1认真模仿，3.2冷眼旁观。"},
+      {speaker:"c21",text:"我好像学会了，开局试试吧！"},
+      {speaker:"c32",text:"纯粹浪费时间。"},
+      {speaker:"c20",text:"休闲不用追求胜负。"},
+      {choice:[
+        {text:"三人直接开局打球",effect:"c20+8,c21+18,c32+10",next:"optA5"},
+        {text:"约下次四人完整对局",effect:"c20+10,c21+12,c32+14",next:"optB5"},
+        {text:"先闲聊各个高地再玩",effect:"c20+12,c21+14,c32+12",next:"optC5"},
       ]},
-      // 选项1a
-      { label: 'q1a', speaker: 'mc', text: '（还是……不要打扰他了吧。）' },
-      { narration: true, text: '我蹑手蹑脚地想退出去，结果——' },
-      { speaker: 'mc', text: '啊！' },
-      { effect: 'shake', narration: true, text: '我不小心踢到了椅子，发出了巨大的声响。' },
-      { speaker: 'c32', text: '谁！' },
-      { speaker: 'mc', text: '对、对不起！我只是回来拿笔记本的……' },
-      { speaker: 'c32', text: '……是你啊。' },
-      { narration: true, text: '他的表情恢复了平时的冷淡，但耳尖似乎有点红。' },
-      { speaker: 'c32', text: '……你看到了？' },
-      { speaker: 'mc', text: '我、我什么都没看到！真的！' },
-      { speaker: 'c32', text: '……随便你。' },
-      { speaker: 'c32', text: '……别告诉别人。' },
-      { goto: 'end' },
-
-      // 选项1b
-      { label: 'q1b', speaker: 'mc', text: '（小声）你其实……很温柔嘛。' },
-      { speaker: 'c32', text: '！' },
-      { narration: true, text: '他猛地转过头来，脸上写满了惊讶。' },
-      { speaker: 'c32', text: '你、你什么时候在那里的？！' },
-      { speaker: 'mc', text: '刚刚……对不起，我不是故意偷看的。' },
-      { speaker: 'c32', text: '……' },
-      { narration: true, text: '他别过脸去，耳根子红得快要滴血。' },
-      { speaker: 'c32', text: '……我才不温柔。' },
-      { speaker: 'mc', text: '（明明就很温柔嘛……嘴硬。）' },
-      { speaker: 'c32', text: '……这件事，不准告诉任何人。' },
-      { speaker: 'mc', text: '好。我不说。' },
-      { goto: 'end' },
-
-      // 选项1c
-      { label: 'q1c', speaker: 'mc', text: '3.2同学？' },
-      { speaker: 'c32', text: '！' },
-      { narration: true, text: '他像被吓到一样猛地回头，手里的猫粮都差点撒了。' },
-      { speaker: 'c32', text: '你、你怎么在这里……' },
-      { speaker: 'mc', text: '我回来拿笔记本。没想到你在喂猫呀。' },
-      { speaker: 'c32', text: '……' },
-      { speaker: 'mc', text: '这只猫好可爱啊。它叫什么名字？' },
-      { speaker: 'c32', text: '……没有名字。' },
-      { speaker: 'c32', text: '……就是，偶尔会来。' },
-      { speaker: 'mc', text: '这样啊。它好像很喜欢你呢。' },
-      { narration: true, text: '他愣了一下，然后别过脸去。' },
-      { speaker: 'c32', text: '……谁知道呢。' },
-      { speaker: 'mc', text: '（耳朵红了……好可爱。）' },
-      { speaker: 'c32', text: '……这件事，你别到处说。' },
-      { speaker: 'mc', text: '好～这是我们的秘密。' },
-      { goto: 'end' },
-
-      // 结尾
-      { label: 'end', narration: true, text: '橘猫吃饱了，"喵"了一声，从窗台上跳走了。' },
-      { narration: true, text: '3.2同学目送它离开，然后默默收拾好猫粮袋。' },
-      { speaker: 'c32', text: '……你不是来拿笔记本的吗。' },
-      { speaker: 'mc', text: '啊！对哦！差点忘了！' },
-      { narration: true, text: '我赶紧跑到座位上拿起笔记本。' },
-      { speaker: 'mc', text: '好了，拿到了！那我先走啦……' },
-      { speaker: 'c32', text: '……嗯。' },
-      { narration: true, text: '走到门口的时候，我忍不住回头看了一眼。' },
-      { narration: true, text: '他站在夕阳里，望着窗外猫离开的方向，表情柔和得不像话。' },
-      { speaker: 'mc', text: '（原来……他也有这样的一面啊。）' },
-      { speaker: 'mc', text: '（感觉……发现了一个了不起的秘密。）' },
-      { ending: true, nextChapter: 5, text: '第五章·完', chapterEnd: true },
+      {label:"optA5",narration:true,text:"三人摆好球，2.1频频打空闹出不少趣事。"},
+      {speaker:"c21",text:"怎么又打偏，我再试一次！"},
+      {speaker:"c32",text:"跟你对局消磨耐心。"},
+      {speaker:"c20",text:"多练习手感会稳定。"},
+      {goto:"endSec5"},
+      {label:"optB5",narration:true,text:"2.1想起2.4，提议下周全员集合。"},
+      {speaker:"c32",text:"人多更嘈杂。"},
+      {speaker:"c20",text:"热闹也别有一番趣味。"},
+      {goto:"endSec5"},
+      {label:"optC5",narration:true,text:"三人先聊鱼池、江边各个高地风景。"},
+      {speaker:"c21",text:"每个高地风景都不一样。"},
+      {speaker:"c32",text:"只有楼顶还算安静。"},
+      {speaker:"c20",text:"每处都有专属特色。"},
+      {goto:"endSec5"},
+      {label:"endSec5",narration:true,text:"黄昏铺满球台，三人约定下次四人齐聚。"},
+      {ending:true,nextChapter:5,text:"第五章 · 天台台球｜2.0+2.1+3.2",chapterEnd:true},
     ],
-
-    // ========== 第六章：高地探险！学校最高点的秘密（集体线）==========
+    // 第六章 全员四人2.0鱼池高地
     [
-      { narration: true, text: '周五下午，2.1同学突然冲进了教室。', bg: '教室' },
-      { charLeft: 'c21', speaker: 'c21', text: '大家——！明天是周末！我们去探索学校的高地吧！', focus: 'left' },
-      { charRight: 'c24', speaker: 'c24', text: '高地？什么高地？听起来好有意思！', focus: 'right' },
-      { charLeft: 'c20', speaker: 'c20', text: '就是学校里那些传说中的秘密地点吧。', focus: 'left' },
-      { charRight: 'c32', speaker: 'c32', text: '……无聊。', focus: 'right' },
-      { speaker: 'c21', text: '3.2你也一起来嘛！人多才好玩啊！' },
-      { speaker: 'c24', text: '对啊对啊！一起去！' },
-      { speaker: 'c20', text: '偶尔出去走走也不错。' },
-      { speaker: 'c32', text: '……切。随便你们。' },
-      { speaker: 'c21', text: '太好了！那就这么定了！明天见！' },
-      { speaker: 'mc', text: '（四个人……加上我一共五个人？）' },
-      { speaker: 'mc', text: '（感觉……会是很特别的一天。）' },
-
-      { narration: true, text: '第二天，阳光明媚。我们在校门口集合，开始了高地探险。' },
-      { bg: 'high20', narration: true, text: '第一站，是教学楼屋顶的小花园。' },
-      { charLeft: 'c20', speaker: 'c20', text: '这里就是"2.0高地"了。', focus: 'left' },
-      { speaker: 'c21', text: '哇——！好漂亮的花园！还有小鱼池！' },
-      { speaker: 'c20', text: '嗯。这里的鱼，每条都有名字。' },
-      { speaker: 'c24', text: '都有名字？这么厉害？' },
-      { speaker: 'c20', text: '这条金色的叫"太阳"，那条白色的叫"月光"……' },
-      { speaker: 'c20', text: '它们都是我从小养到大的。' },
-      { speaker: 'mc', text: '（2.0同学……真的好温柔啊。对小鱼都这么用心。）' },
-      { choice: [
-        { text: '夸他把鱼照顾得很好', effect: 'c20+15', next: 'g1a' },
-        { text: '问他为什么在这里养鱼', effect: 'c20+10', next: 'g1b' },
+      {narration:true,text:"周末午后阳光柔和，四人约好齐聚2.0养鱼楼顶。",bg:"high20"},
+      {charLeft:"c21",speaker:"c21",text:"我们四个终于全部凑齐！",focus:"left"},
+      {charCenter:"c20",speaker:"c20",text:"带你们看看我长期照料的小鱼。",focus:"center"},
+      {charRight:"c24",speaker:"c24",text:"之前单独来过，四人一起还是第一次。",focus:"right"},
+      {charRight:"c32",speaker:"c32",text:"普通鱼池而已。",focus:"right"},
+      {narration:true,text:"2.0分发饲料，四人蹲在池边投喂成群小鱼。"},
+      {speaker:"c21",text:"每条鱼颜色都不一样，居然单独取名！"},
+      {speaker:"c20",text:"饲养久了每条习性不同。"},
+      {speaker:"c24",text:"喂完去2.4高地喝柠檬液看大桥！"},
+      {speaker:"c32",text:"你们安排即可。"},
+      {narration:true,text:"四人轮流聊图书馆、台球、走廊相遇的旧事。"},
+      {choice:[
+        {text:"喂完直接去江边看日落",effect:"c20+12,c21+14,c24+10,c32+12",next:"optA6"},
+        {text:"先打台球再去江边",effect:"c20+14,c21+10,c24+14,c32+10",next:"optB6"},
+        {text:"多停留闲聊再出发",effect:"c20+10,c21+12,c24+12,c32+8",next:"optC6"},
       ]},
-      { label: 'g1a', speaker: 'mc', text: '你把它们照顾得好好啊。每条鱼都好漂亮。' },
-      { speaker: 'c20', text: '……谢谢。' },
-      { narration: true, text: '他的耳尖微微泛红，嘴角带着淡淡的笑意。' },
-      { goto: 'high22' },
-      { label: 'g1b', speaker: 'mc', text: '你为什么会想到在屋顶养鱼呀？' },
-      { speaker: 'c20', text: '……以前觉得一个人挺孤单的，就养了几条。' },
-      { speaker: 'c20', text: '养着养着，就越来越多了。' },
-      { speaker: 'mc', text: '（他……也会觉得孤单啊。）' },
-      { goto: 'high22' },
-
-      // 第二站
-      { label: 'high22', bg: 'high22d', narration: true, text: '第二站，是学校废弃的活动室。' },
-      { charLeft: 'c21', speaker: 'c21', text: '这里就是"2.2高地"啦！', focus: 'left' },
-      { speaker: 'c24', text: '哇！里面居然有台球桌！太酷了吧！' },
-      { speaker: 'c21', text: '对吧对吧！我发现的时候也超惊喜的！' },
-      { charRight: 'c32', speaker: 'c32', text: '……这桌子也太旧了。', focus: 'right' },
-      { speaker: 'c21', text: '旧归旧，但是能打啊！来玩来玩！' },
-      { narration: true, text: '大家分成两队打台球。不出所料，2.1同学打得超级烂。' },
-      { speaker: 'c21', text: '嘿——！' },
-      { effect: 'shake', narration: true, text: '球杆一挥，白球"咻"地飞了出去，直接滚到了桌子底下。' },
-      { speaker: 'c24', text: '噗——哈哈哈哈！你这也太菜了吧！' },
-      { speaker: 'c21', text: '呜呜呜不许笑我！我也是第一次打嘛！' },
-      { speaker: 'c20', text: '我来教你吧。握杆的姿势是这样……' },
-      { speaker: 'mc', text: '（大家都笑得好开心……这种感觉，真好。）' },
-      { choice: [
-        { text: '加入打球的行列', effect: 'c21+10', next: 'g2a' },
-        { text: '在旁边看着他们笑', effect: 'c20+5, c24+5, c32+5', next: 'g2b' },
-      ]},
-      { label: 'g2a', speaker: 'mc', text: '我也想试试！可以教我吗？' },
-      { speaker: 'c21', text: '好啊好啊！我们一起学！' },
-      { speaker: 'c24', text: '我来教你们！保证教会！' },
-      { narration: true, text: '虽然打得很烂，但大家都笑得停不下来。' },
-      { goto: 'high24' },
-      { label: 'g2b', speaker: 'mc', text: '（我就……在旁边看着就好。）' },
-      { narration: true, text: '我靠在窗边，看着大家打闹的样子，不自觉地笑了。' },
-      { narration: true, text: '就在这时，我感觉到一道目光。' },
-      { narration: true, text: '3.2同学站在角落里，也在看着大家，嘴角似乎……微微上扬。' },
-      { speaker: 'mc', text: '（……他也觉得开心吧。）' },
-      { goto: 'high24' },
-
-      // 第三站
-      { label: 'high24', bg: 'high24', narration: true, text: '最后一站，是学校最高的屋顶。从这里能看到远处的杨浦大桥。' },
-      { charRight: 'c24', speaker: 'c24', text: '哇——！这里视野也太好了吧！', focus: 'right' },
-      { charLeft: 'c21', speaker: 'c21', text: '这就是传说中的"2.4高地"吗！好壮观！', focus: 'left' },
-      { speaker: 'c24', text: '对啊！这是我找到的秘密基地！' },
-      { narration: true, text: '大家坐在一起，喝着冰镇柠檬液，看着远处的风景。' },
-      { narration: true, text: '夕阳慢慢西下，天空被染成了橙红色。' },
-      { speaker: 'c20', text: '……真美啊。' },
-      { speaker: 'c21', text: '嘿嘿，今天玩得好开心！' },
-      { speaker: 'c24', text: '下次我们还可以来！我知道还有别的好地方！' },
-      { charRight: 'c32', speaker: 'c32', text: '……还来？', focus: 'right' },
-      { speaker: 'c24', text: '怎么，你不乐意啊？' },
-      { speaker: 'c32', text: '……随便。' },
-      { speaker: 'mc', text: '（口是心非。他明明很开心。）' },
-      { choice: [
-        { text: '说"和大家在一起真的很开心"', effect: 'c20+5, c21+10, c24+10, c32+10', next: 'g3a' },
-        { text: '提议拍一张合照', effect: 'c20+10, c21+10, c24+10, c32+5', next: 'g3b' },
-      ]},
-      { label: 'g3a', speaker: 'mc', text: '……我今天，真的很开心。' },
-      { speaker: 'mc', text: '能和大家一起来探险，真的太好了。' },
-      { speaker: 'c21', text: '我也是我也是！有你在更开心！' },
-      { speaker: 'c24', text: '没错没错！以后还要一起来！' },
-      { speaker: 'c20', text: '嗯……我也这么觉得。' },
-      { speaker: 'c32', text: '……哼。' },
-      { narration: true, text: '虽然嘴上不说，但3.2同学的眼神明显柔和了许多。' },
-      { goto: 'final' },
-      { label: 'g3b', speaker: 'mc', text: '那个……我们拍一张合照吧？' },
-      { speaker: 'c21', text: '好主意好主意！拍合照！' },
-      { speaker: 'c24', text: '来来来！大家站好！' },
-      { speaker: 'c20', text: '……好。' },
-      { speaker: 'c32', text: '……为什么要拍这种东西。' },
-      { speaker: 'c21', text: '来嘛来嘛！难得来一次！' },
-      { narration: true, text: '虽然嘴上抱怨，但3.2同学还是凑了过来。' },
-      { narration: true, text: '"咔擦"——夕阳下，五个人的身影被永远定格。' },
-      { goto: 'final' },
-
-      // 章节结尾
-      { label: 'final', narration: true, text: '太阳快要落山了，大家站在最高的高地上，望着远方。' },
-      { speaker: 'c21', text: '下次……我们还要一起来哦！' },
-      { speaker: 'c24', text: '那必须的！下次我带运动饮料来！' },
-      { speaker: 'c20', text: '我带些水果吧。' },
-      { speaker: 'c32', text: '……随便你们。' },
-      { speaker: 'mc', text: '（……真是一群有个性的人。）' },
-      { speaker: 'mc', text: '（但是……能遇到他们，真好。）' },
-      { speaker: 'mc', text: '嗯！约好了！下次还要一起来！' },
-      { narration: true, text: '夕阳下，五个身影紧紧靠在一起。' },
-      { narration: true, text: '这是属于我们的，青春的约定。' },
-      { ending: true, nextChapter: 6, text: '第六章·完', chapterEnd: true, unlockHidden: true },
+      {label:"optA6",narration:true,text:"全员一致奔赴最高天台赶日落。"},
+      {speaker:"c24",text:"提前备好冰镇柠檬。"},
+      {speaker:"c21",text:"期待一起看大桥晚霞！"},
+      {goto:"endSec6"},
+      {label:"optB6",narration:true,text:"决定先去2.2楼顶台球，晚些再赏江景。"},
+      {speaker:"c32",text:"打球噪音很大。"},
+      {speaker:"c20",text:"我们控制音量。"},
+      {goto:"endSec6"},
+      {label:"optC6",narration:true,text:"留在鱼池慢慢投喂闲聊，晚些再去看夜景大桥。"},
+      {speaker:"c20",text:"楼顶风温和多待一会无妨。"},
+      {speaker:"c24",text:"夜晚大桥灯光也很好看。"},
+      {goto:"endSec6"},
+      {label:"endSec6",narration:true,text:"落日铺满水面，四人按照选择路线一同离开。"},
+      {ending:true,nextChapter:6,text:"第六章 · 全员鱼池相聚｜四人同场",chapterEnd:true},
     ],
-
-    // ========== 隐藏剧情：星空下的约定 ==========
+    // 隐藏章 四人星空天台完整结局
     [
-      { bg: 'night', narration: true, text: '期末考试结束后的那个晚上……' },
-      { narration: true, text: '我收到了一条群消息，是2.1同学发来的。' },
-      { speaker: 'c21', text: '"大家！今晚来学校一趟呗！有惊喜！"' },
-      { speaker: 'mc', text: '（这么晚了……会是什么事呢？）' },
-      { narration: true, text: '带着好奇，我偷偷溜出了家门，来到了学校。' },
-      { narration: true, text: '按照2.1同学的指引，我爬上了最高的那栋楼的屋顶。' },
-      { bg: 'high24', narration: true, text: '推开门的瞬间——' },
-      { charLeft: 'c21', charRight: 'c24', speaker: 'c21', text: 'Surprise——！', focus: 'left' },
-      { effect: 'shake', speaker: 'mc', text: '哇——！' },
-      { narration: true, text: '屋顶上挂满了小灯，地面上铺着野餐垫，四个人站在那里笑着。' },
-      { charLeft: 'c20', speaker: 'c20', text: '期末考试辛苦了。我们想……给你一个惊喜。', focus: 'left' },
-      { charRight: 'c24', speaker: 'c24', text: '怎么样？是不是超感动！', focus: 'right' },
-      { speaker: 'mc', text: '你、你们怎么……' },
-      { charRight: 'c32', speaker: 'c32', text: '……别看我，是这帮家伙硬拉我来的。', focus: 'right' },
-      { speaker: 'c21', text: '明明你自己也很期待好嘛！' },
-      { speaker: 'c32', text: '闭嘴。' },
-      { speaker: 'mc', text: '（……好感动。）' },
-      { speaker: 'mc', text: '谢谢大家……我真的好开心。' },
-
-      { narration: true, text: '五个人围坐在一起，吃着零食，聊着天。' },
-      { narration: true, text: '夜空中，星星一闪一闪的，格外明亮。' },
-      { speaker: 'c24', text: '话说，我们认识也快一年了呢。' },
-      { speaker: 'c21', text: '时间过得好快啊……感觉你转学来还是昨天的事呢。' },
-      { speaker: 'c20', text: '……是啊。' },
-      { speaker: 'mc', text: '嗯……遇到大家，真的是我这一年里最开心的事。' },
-      { narration: true, text: '大家安静了下来，都望着星空。' },
-      { speaker: 'c20', text: '……我有话想跟你说。' },
-      { narration: true, text: '2.0同学转过头，认真地看着我。' },
-      { speaker: 'c20', text: '你刚来的时候，我就觉得……你很特别。' },
-      { speaker: 'c20', text: '跟你在一起的时候，我会觉得很安心。' },
-      { speaker: 'c20', text: '……以后，也一直在一起吧。' },
-      { speaker: 'mc', text: '！' },
-      { speaker: 'c21', text: '等、等一下！我也有话要说！' },
-      { speaker: 'c21', text: '我、我也是！从第一次撞到你的时候我就……我就觉得你好好！' },
-      { speaker: 'c21', text: '每次迷路的时候，我第一个想到的就是你！' },
-      { speaker: 'c21', text: '我……我喜欢你！' },
-      { speaker: 'c24', text: '可恶！被抢先了！' },
-      { speaker: 'c24', text: '那个！我也喜欢你！想一直和你一起运动，一起看风景！' },
-      { speaker: 'c24', text: '请……请和我交往！' },
-      { narration: true, text: '三个人同时告白，我整个人都懵了。' },
-      { speaker: 'mc', text: '等、等等……你们……' },
-      { charRight: 'c32', speaker: 'c32', text: '……切，一群笨蛋。', focus: 'right' },
-      { speaker: 'c32', text: '……我也是。' },
-      { speaker: 'c32', text: '……别让我说第二遍。' },
-      { speaker: 'mc', text: '3.2同学……' },
-
-      { narration: true, text: '五个人沉默了一会儿，然后……都笑了。' },
-      { speaker: 'c21', text: '哈哈……怎么办，大家都喜欢同一个人呢。' },
-      { speaker: 'c24', text: '那就……公平竞争呗！' },
-      { speaker: 'c20', text: '……我觉得这样也挺好的。' },
-      { speaker: 'c32', text: '……随便。反正赢的人是我。' },
-      { speaker: 'c21', text: '你说什么！太嚣张了吧！' },
-      { speaker: 'c24', text: '就是就是！我才不会输！' },
-      { speaker: 'mc', text: '（……大家都好傻。）' },
-      { speaker: 'mc', text: '（但是……好温暖。）' },
-
-      { narration: true, text: '我抬起头，看着满天的星星。' },
-      { speaker: 'mc', text: '我也是……' },
-      { speaker: 'mc', text: '能遇到大家，真的太好了。' },
-      { speaker: 'mc', text: '以后……也请多多关照啦。' },
-      { narration: true, text: '五个人的笑声，在夏夜里回荡着。' },
-      { narration: true, text: '星光下，是我们最美好的青春。' },
-      { narration: true, text: '和他们在一起的每一天，都是闪闪发光的。' },
-      { speaker: 'mc', text: '（完了……我真的被男同学包围了。）' },
-      { speaker: 'mc', text: '（但是……好像还不错呢。）' },
-
-      { ending: true, text: '完', finalEnding: true },
-    ],
+      {bg:"night",narration:true,text:"期末所有测验全部结束，没有作业压力的深夜，2.1在群里发消息邀约大家集合。"},
+      {narration:true,text:"收拾好简单零食与冰镇柠檬液，四人分批悄悄爬上2.4最高天台，整片夜空布满细碎星光。"},
+      {charLeft:"c21",charCenter:"c24",speaker:"c21",text:"终于全部凑齐！这段时间我们单人、双人、三人都逛遍所有高地啦！",focus:"left"},
+      {speaker:"c24",text:"之前单独和你去江边，和2.0散步，今天全员聚在一起，感觉完全不一样。"},
+      {charCenter:"c20",speaker:"c20",text:"图书馆、鱼池、台球楼顶每一处回忆都很珍贵，能认识各位很幸运。",focus:"center"},
+      {charRight:"c32",speaker:"c32",text:"也就一般，吵闹归吵闹，倒不算让人反感。",focus:"right"},
+      {narration:true,text:"四人围坐在铺好的野餐垫上，分着饮品与小点心，轮流说起各自结伴时的小事。"},
+      {speaker:"c21",text:"还记得第一次在走廊撞掉书本吗？那时候我连教学楼都认不全！"},
+      {speaker:"c20",text:"当时看你慌慌张张，就想着多照拂你一点，后来慢慢熟络起来。"},
+      {speaker:"c24",text:"当初拉着你去江边吹风，没想到后续能凑齐四个人结伴探险。"},
+      {speaker:"c32",text:"图书馆那次、教室喂猫那次，都还算安静的时刻。"},
+      {narration:true,text:"晚风轻轻吹过高台，远处杨浦大桥亮起一整条灯带，在夜色里格外好看。"},
+      {choice:[
+        {text:"听大家慢慢细数所有高地回忆",effect:"c20+15,c21+15,c24+15,c32+15",next:"starA"},
+        {text:"提议假期继续组队探索新楼顶",effect:"c20+10,c21+20,c24+20,c32+10",next:"starB"},
+        {text:"安静抬头看星空，暂时不说话",effect:"c20+12,c21+12,c24+12,c32+18",next:"starC"},
+      ]},
+      {label:"starA",narration:true,text:"四人你一言我，从图书馆习题聊到台球闹笑话，再到鱼池喂鱼，所有小事全部复盘一遍。"},
+      {speaker:"c21",text:"以后还要经常约着出门，不能等放假才碰面！"},
+      {speaker:"c32",text:"……有空可以响应邀约。"},
+      {goto:"starEnd"},
+      {label:"starB",narration:true,text:"说起寒暑假不用上课，四人瞬间来了兴致。"},
+      {speaker:"c24",text:"到时候带运动器材，台球吹风喂鱼一次性全部安排！"},
+      {speaker:"c20",text:"我提前准备好鱼食和饮品，随时可以出发。"},
+      {goto:"starEnd"},
+      {label:"starC",narration:true,text:"所有人停下交谈，一同抬头望向漫天星辰。"},
+      {speaker:"c32",text:"这样安静的时刻，倒也值得多待一会儿。"},
+      {goto:"starEnd"},
+      {label:"starEnd",narration:true,text:"星光落在四个少年身上，过往回忆交织。"},
+      {speaker:"c21",text:"不管双人还是全员，和大家在一起永远开心。"},
+      {speaker:"c20",text:"剩下校园时光继续探索秘密高地。"},
+      {speaker:"c24",text:"大桥、台球、鱼池都是专属回忆。"},
+      {speaker:"c32",text:"下次别太吵，但我不会缺席。"},
+      {narration:true,text:"少年笑声随晚风飘散，高地冒险故事圆满收尾。"},
+      {ending:true,text:"隐藏章 · 星空下全员约定",finalEnding:true},
+    ]
   ];
-
   return chapters[chapterIdx] || [];
 }
-
-// 章节元信息
+// 章节元数据（完整配套）
 const CHAPTER_META = [
-  { num: '第一章', name: '转学生的初遇', desc: '转学第一天，陆续遇到四位个性男同学……' },
-  { num: '第二章', name: '温柔的图书馆时光', desc: '和2.0同学在图书馆的温馨午后。' },
-  { num: '第三章', name: '迷糊蛋的大冒险', desc: '帮2.1同学找教室，结果……' },
-  { num: '第四章', name: '操场上的汗水与青春', desc: '被2.4同学邀请一起运动！' },
-  { num: '第五章', name: '教室角落里的秘密', desc: '放学后，发现了3.2同学的秘密……' },
-  { num: '第六章', name: '高地探险！', desc: '五人一起探索学校的传说之地！' },
-  { num: '隐藏章', name: '星空下的约定', desc: '✨ 全员好感度满值后解锁' },
+  { num: "第一章", name: "走廊初遇", desc: "午休走廊相撞，四位男生第一次全部碰面" },
+  { num: "第二章", name: "图书馆闲聊｜2.1&3.2", desc: "无2.0出场，迷糊少年与高冷男生独处看书" },
+  { num: "第三章", name: "天台晚风｜2.1&2.4", desc: "无2.0出场，两人独自在2.4高地看大桥" },
+  { num: "第四章", name: "教室独处｜2.0&3.2", desc: "放学后教室，喂猫与养鱼的温柔对话" },
+  { num: "第五章", name: "天台台球｜2.0+2.1+3.2", desc: "2.2高地三人一起打免费台球" },
+  { num: "第六章", name: "鱼池相聚｜四人全员", desc: "2.0高地楼顶，四位男生齐聚喂小鱼" },
+  { num: "隐藏章", name: "星空下全员约定", desc: "全部角色好感满值解锁，深夜天台真结局" },
 ];
-
 // ========================================================
-// 工具函数
+// 通用工具函数
 // ========================================================
 function $(id) { return document.getElementById(id); }
-
 function safeLS(key, value) {
   try {
     if (value === undefined) {
@@ -1590,842 +1143,609 @@ function safeLS(key, value) {
     }
     localStorage.setItem(key, JSON.stringify(value));
   } catch (e) {
-    console.warn('localStorage error', e);
+    console.warn('localStorage 存储异常', e);
     return null;
   }
 }
-
+// 更新好感度进度条
 function updateHUD() {
   document.querySelectorAll('.affection-item').forEach(item => {
     const char = item.dataset.char;
-    const pct = Math.min(100, Math.max(0, (state.affection[char] / AFFECTION_MAX) * 100));
-    item.querySelector('.affection-fill').style.width = pct + '%';
+    const total = AFFECTION_MAX;
+    const percent = Math.min(100, Math.max(0, (state.affection[char] / total) * 100));
+    item.querySelector('.affection-fill').style.width = percent + '%';
     const heart = item.querySelector('.affection-heart');
-    heart.textContent = pct >= 100 ? '♥' : '♡';
-    heart.style.color = pct >= 100 ? 'hsl(340, 85%, 55%)' : '';
+    heart.textContent = percent >= 100 ? '♥' : '♡';
   });
 }
-
-function showAffectionPopup(charKey, amount) {
-  const popup = document.createElement('div');
-  popup.className = 'affection-popup';
-  popup.innerHTML = `
-    <div class="affection-popup-inner">
-      <span style="font-size:20px;color:hsl(340,75%,60%);">♥</span>
-      <span class="affection-popup-text">${CHAR_NAMES[charKey]} 好感度 +${amount}</span>
-    </div>
-  `;
-  $('game-root').appendChild(popup);
-  setTimeout(() => popup.remove(), 1500);
-}
-
-function applyAffectionEffect(effectStr) {
+// 弹出好感增加提示
+function showAffectionPopup(effectStr) {
   if (!effectStr) return;
-  const items = effectStr.split(',');
-  items.forEach(item => {
-    item = item.trim();
-    const match = item.match(/(c\d+)\+(\d+)/);
-    if (match) {
-      const char = match[1];
-      const val = parseInt(match[2], 10);
-      state.affection[char] = Math.min(AFFECTION_MAX, state.affection[char] + val);
-      showAffectionPopup(char, val);
-    }
+  const list = effectStr.split(',');
+  list.forEach(seg => {
+    const match = seg.match(/([c0-9]+)\+(\d+)/);
+    if (!match) return;
+    const charId = match[1];
+    const addNum = parseInt(match[2]);
+    state.affection[charId] = Math.min(AFFECTION_MAX, state.affection[charId] + addNum);
+    const pop = document.createElement('div');
+    pop.className = 'affection-popup';
+    pop.innerHTML = `
+      <div class="affection-popup-inner">
+        <span style="color:hsl(340,75%,60%);font-size:20px;">♥</span>
+        <span class="affection-popup-text">${CHAR_NAMES[charId]} 好感 +${addNum}</span>
+      </div>
+    `;
+    $('game-root').appendChild(pop);
+    setTimeout(() => pop.remove(), 1500);
   });
   updateHUD();
 }
-
-// 检查隐藏章是否解锁（全员好感度满值）
+// 应用选项好感效果
+function applyAffectionEffect(effectStr) {
+  showAffectionPopup(effectStr);
+}
+// 检测是否解锁隐藏章节
 function checkHiddenUnlock() {
   return state.affection.c20 >= AFFECTION_MAX
       && state.affection.c21 >= AFFECTION_MAX
       && state.affection.c24 >= AFFECTION_MAX
       && state.affection.c32 >= AFFECTION_MAX;
 }
-
-// ========================================================
-// 背景切换
-// ========================================================
+// 切换背景图/渐变
 function setBackground(bgKey) {
-  const bgLayer = $('bgLayer');
+  const bgDom = $('bgLayer');
   if (!bgKey) {
-    bgLayer.style.background = BG_GRADIENTS.hallway;
-    bgLayer.style.opacity = '1';
+    bgDom.style.background = BG_GRADIENTS.hallway;
+    bgDom.style.opacity = '1';
     return;
   }
-  // 先检查是不是图片
   if (BG_IMAGES[bgKey]) {
-    bgLayer.style.background = `url("${BG_IMAGES[bgKey]}") center/cover no-repeat`;
-    bgLayer.style.opacity = '1';
+    bgDom.style.background = `url("${BG_IMAGES[bgKey]}") center/cover no-repeat`;
   } else if (BG_GRADIENTS[bgKey]) {
-    bgLayer.style.background = BG_GRADIENTS[bgKey];
-    bgLayer.style.opacity = '1';
-  } else {
-    bgLayer.style.background = BG_GRADIENTS.hallway;
-    bgLayer.style.opacity = '1';
+    bgDom.style.background = BG_GRADIENTS[bgKey];
   }
+  bgDom.style.opacity = '1';
 }
-
-// ========================================================
-// 角色立绘控制
-// ========================================================
+// 控制角色立绘显示/淡出
 function setCharacters(left, center, right) {
-  const leftEl = $('charLeft');
-  const centerEl = $('charCenter');
-  const rightEl = $('charRight');
+  const elLeft = $('charLeft');
+  const elCen = $('charCenter');
+  const elRight = $('charRight');
 
-  // 左
+  // 先把所有角色淡出，但不清空图片地址
+  elLeft.classList.remove('active');
+  elCen.classList.remove('active');
+  elRight.classList.remove('active');
+
+  // 不立即清空src，等下一次切换角色时再覆盖，避免中途消失
+  // 移除原来的 setTimeout 清空代码！
+
+  // 加载新角色
   if (left && CHAR_IMAGES[left]) {
-    leftEl.src = CHAR_IMAGES[left];
-    leftEl.alt = CHAR_NAMES[left];
-    leftEl.classList.add('active');
+    elLeft.src = CHAR_IMAGES[left];
+    elLeft.classList.add('active');
   } else {
-    leftEl.classList.remove('active');
-    setTimeout(() => { if (!leftEl.classList.contains('active')) leftEl.src = ''; }, 600);
+    elLeft.src = ""; // 只有当前无角色才清空
   }
-
-  // 中
   if (center && CHAR_IMAGES[center]) {
-    centerEl.src = CHAR_IMAGES[center];
-    centerEl.alt = CHAR_NAMES[center];
-    centerEl.classList.add('active');
+    elCen.src = CHAR_IMAGES[center];
+    elCen.classList.add('active');
   } else {
-    centerEl.classList.remove('active');
-    setTimeout(() => { if (!centerEl.classList.contains('active')) centerEl.src = ''; }, 600);
+    elCen.src = "";
   }
-
-  // 右
   if (right && CHAR_IMAGES[right]) {
-    rightEl.src = CHAR_IMAGES[right];
-    rightEl.alt = CHAR_NAMES[right];
-    rightEl.classList.add('active');
+    elRight.src = CHAR_IMAGES[right];
+    elRight.classList.add('active');
   } else {
-    rightEl.classList.remove('active');
-    setTimeout(() => { if (!rightEl.classList.contains('active')) rightEl.src = ''; }, 600);
+    elRight.src = "";
   }
 
   state.charsOnScreen = { left, center, right };
 }
-
+// 设置说话角色高亮
 function setSpeaking(side) {
-  ['left', 'center', 'right'].forEach(s => {
-    const el = $('char' + s.charAt(0).toUpperCase() + s.slice(1));
-    el.classList.remove('speaking', 'dim');
-    if (side && s !== side && el.classList.contains('active')) {
-      el.classList.add('dim');
-    }
-    if (side === s) {
-      el.classList.add('speaking');
-    }
+  const sides = ['left','center','right'];
+  sides.forEach(s => {
+    const dom = document.querySelector(`.char-sprite.pos-${s}`);
+    dom.classList.remove('speaking','dim');
+    if (side && s !== side && dom.classList.contains('active')) dom.classList.add('dim');
+    if (side === s) dom.classList.add('speaking');
   });
 }
-
-// ========================================================
-// 打字机效果
-// ========================================================
-function typeText(text, callback) {
-  const el = $('dialogText');
-  $('dialogTriangle').style.display = 'none';
-  state.currentText = text;
-  state.isTyping = true;
-
-  if (state.fastForward) {
-    el.textContent = text;
-    state.isTyping = false;
-    $('dialogTriangle').style.display = 'block';
-    if (callback) callback();
-    return;
-  }
-
-  let i = 0;
-  el.textContent = '';
+// 文字打字机
+function typeText(text, onFinish) {
   clearInterval(state.typeTimer);
+  state.isTyping = true;
+  state.currentText = text;
+  const textDom = $('dialogText');
+  textDom.textContent = "";
+  $('dialogTriangle').style.display = "none";
+  let i = 0;
   state.typeTimer = setInterval(() => {
+    textDom.textContent += text[i];
+    i++;
     if (i >= text.length) {
       clearInterval(state.typeTimer);
       state.isTyping = false;
-      $('dialogTriangle').style.display = 'block';
-      if (callback) callback();
-      return;
+      $('dialogTriangle').style.display = "block";
+      if (onFinish) onFinish();
     }
-    el.textContent += text[i];
-    i++;
   }, 40);
 }
-
+// 跳过打字
 function skipTyping() {
-  if (state.isTyping) {
-    clearInterval(state.typeTimer);
-    $('dialogText').textContent = state.currentText;
-    state.isTyping = false;
-    $('dialogTriangle').style.display = 'block';
-  }
+  if (!state.isTyping) return;
+  clearInterval(state.typeTimer);
+  $('dialogText').textContent = state.currentText;
+  state.isTyping = false;
+  $('dialogTriangle').style.display = 'block';
 }
-
-// ========================================================
-// 剧情推进
-// ========================================================
-let chapterData = [];
-let lineIdx = 0;
+// 推进剧情
 let showingChoice = false;
-
-function startChapter(chapterIdx) {
-  // 检查隐藏章
-  if (chapterIdx === 6 && !checkHiddenUnlock()) {
-    alert('需要所有角色好感度达到满值才能解锁隐藏章节哦～');
-    return;
-  }
-
-  state.currentChapter = chapterIdx;
-  state.activeChapter = chapterIdx;
-  chapterData = getChapterData(chapterIdx);
-  lineIdx = 0;
-  showingChoice = false;
-
-  // 清空角色
-  setCharacters(null, null, null);
-
-  // 隐藏菜单
-  $('mainMenu').style.display = 'none';
-  $('chapterSelect').style.display = 'none';
-  $('gameMenu').classList.remove('show');
-
-  // 显示HUD和对话框
-  $('hud').style.display = state.hudVisible ? 'flex' : 'none';
-  $('dialogBox').style.display = 'block';
-  $('choiceContainer').style.display = 'none';
-
-  // 章节过场
-  showChapterIntro(chapterIdx, () => {
-    nextLine();
-  });
-}
-
-function showChapterIntro(chapterIdx, callback) {
-  const meta = CHAPTER_META[chapterIdx];
-  const intro = document.createElement('div');
-  intro.className = 'chapter-intro';
-  intro.innerHTML = `
-    <div class="chapter-intro-num">${meta.num}</div>
-    <div class="chapter-intro-name">${meta.name}</div>
-    <div class="chapter-intro-sub">～ 高地探险篇 ～</div>
-  `;
-  $('game-root').appendChild(intro);
-  setTimeout(() => {
-    intro.style.transition = 'opacity 0.6s';
-    intro.style.opacity = '0';
-    setTimeout(() => { intro.remove(); callback && callback(); }, 600);
-  }, 2000);
-}
-
 function nextLine() {
+  // 章节开场动画、结局弹窗期间禁止任何点击推进
+  if (state.introPlaying) return;
+  // 关键新增：如果结局弹窗已经存在，直接拦截所有点击
+  if (document.querySelector('.ending-screen')) return;
   if (showingChoice) return;
-
-  if (lineIdx >= chapterData.length) {
-    return;
-  }
-
+  // 超出剧情长度直接停止
+  if (lineIdx >= chapterData.length) return;
   const line = chapterData[lineIdx];
 
-  // label 跳过
+  // 标签跳转，只移动指针不渲染内容
   if (line.label) {
     lineIdx++;
     nextLine();
     return;
   }
-
-  // goto
+  // goto 跳转指定标记行
   if (line.goto) {
-    const label = line.goto;
-    const idx = chapterData.findIndex(l => l.label === label);
-    if (idx >= 0) {
-      lineIdx = idx;
-      nextLine();
-      return;
-    }
-    lineIdx++;
+    const target = chapterData.findIndex(item => item.label === line.goto);
+    lineIdx = target > -1 ? target : lineIdx + 1;
     nextLine();
     return;
   }
-
-  // ending
+  // 章节结束弹窗，弹出后直接return，不再执行任何后续逻辑
   if (line.ending) {
-    showEnding(line);
+    showEndingScreen(line);
+    // 核心修复：弹出弹窗直接阻断代码，不会再执行下面对话逻辑
     return;
   }
 
-  // 背景切换
-  if (line.bg) {
-    setBackground(line.bg);
-  }
-
-  // 角色位置
+  // 切换背景、角色、说话高亮、震动特效
+  if (line.bg) setBackground(line.bg);
   if (line.charLeft !== undefined || line.charCenter !== undefined || line.charRight !== undefined) {
-    const newLeft = line.charLeft !== undefined ? line.charLeft : state.charsOnScreen.left;
-    const newCenter = line.charCenter !== undefined ? line.charCenter : state.charsOnScreen.center;
-    const newRight = line.charRight !== undefined ? line.charRight : state.charsOnScreen.right;
-    setCharacters(newLeft, newCenter, newRight);
+    setCharacters(line.charLeft, line.charCenter, line.charRight);
   }
-
-  // focus（谁在说话）
-  if (line.focus) {
-    setSpeaking(line.focus);
-  }
-
-  // 特效
-  if (line.effect === 'shake') {
+  if (line.focus) setSpeaking(line.focus);
+  if (line.effect === "shake") {
     const root = $('game-root');
-    root.style.animation = 'none';
-    root.offsetHeight; // 触发重绘
-    root.style.animation = 'shakeScreen 0.3s ease';
+    root.style.animation = "none";
+    root.offsetHeight;
+    root.style.animation = "shakeScreen 0.3s";
   }
 
-  // 选项
+  // 出现选项，暂停剧情
   if (line.choice) {
-    showChoices(line.choice);
+    renderChoices(line.choice);
     return;
   }
 
-  // 显示对话
-  const speaker = line.speaker;
-  const nameEl = $('charName');
+  // 切换对话框文字/旁白样式
+  const nameDom = $('charName');
   const dialogBox = $('dialogBox');
-
-  if (line.narration || speaker === 'narr') {
-    dialogBox.classList.add('narration');
-    nameEl.textContent = '';
-  } else if (speaker === 'mc') {
-    dialogBox.classList.remove('narration');
-    nameEl.textContent = '我';
-    nameEl.style.background = 'linear-gradient(135deg, hsl(270, 70%, 68%), hsl(340, 80%, 68%))';
-  } else if (speaker && CHAR_NAMES[speaker]) {
-    dialogBox.classList.remove('narration');
-    nameEl.textContent = CHAR_NAMES[speaker];
-    nameEl.style.background = '';
+  dialogBox.classList.remove("narration");
+  if (line.narration || line.speaker === "narr") {
+    dialogBox.classList.add("narration");
+    nameDom.textContent = "";
+  } else if (line.speaker === "mc") {
+    nameDom.textContent = "我";
+    nameDom.style.background = "linear-gradient(135deg, hsl(270,70%,68%), hsl(340,80%,68%))";
+  } else if (CHAR_NAMES[line.speaker]) {
+    nameDom.textContent = CHAR_NAMES[line.speaker];
+    nameDom.style.background = "";
   } else {
-    dialogBox.classList.remove('narration');
-    nameEl.textContent = speaker || '';
+    nameDom.textContent = line.speaker || "";
   }
 
-  typeText(line.text || '');
-
-  // 标记已读
-  state.readFlags[`${state.currentChapter}_${lineIdx}`] = true;
-
+  // 记录当前行，文字打完再标记
+  const currentLineNum = lineIdx;
+  typeText(line.text, () => {
+    state.readFlags[`${state.currentChapter}_${currentLineNum}`] = true;
+  });
+  // 文字加载完成再增加行数
   lineIdx++;
 }
-
-function showChoices(choices) {
+// 渲染选项
+function renderChoices(arr) {
   showingChoice = true;
-  const container = $('choiceContainer');
-  container.innerHTML = '';
-  container.style.display = 'flex';
-
-  choices.forEach(choice => {
+  const wrap = $('choiceContainer');
+  wrap.style.display = 'flex';
+  wrap.innerHTML = '';
+  arr.forEach(opt=>{
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
-    btn.textContent = choice.text;
-    btn.addEventListener('click', () => {
-      // 应用好感度
-      if (choice.effect) applyAffectionEffect(choice.effect);
-
-      // 隐藏选项
-      container.style.display = 'none';
+    btn.textContent = opt.text;
+    btn.onclick = ()=>{
+      if(opt.effect) applyAffectionEffect(opt.effect);
+      wrap.style.display = 'none';
       showingChoice = false;
-
-      // 跳转
-      if (choice.next) {
-        const idx = chapterData.findIndex(l => l.label === choice.next);
-        if (idx >= 0) {
-          lineIdx = idx;
-          nextLine();
-          return;
-        }
-      }
+      if(opt.next) lineIdx = chapterData.findIndex(i=>i.label===opt.next);
       nextLine();
-    });
-    container.appendChild(btn);
+    };
+    wrap.appendChild(btn);
   });
 }
-
-// ========================================================
-// 结局 / 章节结束
-// ========================================================
-function showEnding(line) {
-  // 解锁下一章
-  if (line.nextChapter !== undefined && line.nextChapter < CHAPTER_META.length) {
-    state.chapterUnlocked[line.nextChapter] = true;
-    saveProgress();
-  }
-
-  // 创建结局画面
-  const screen = document.createElement('div');
-  screen.className = 'ending-screen';
-
-  let titleText = line.text || '本章完';
-  let descText = '';
-
-  if (line.finalEnding) {
-    titleText = '✨ 真结局 · 完 ✨';
-    descText = '感谢你陪伴他们走过这段青春时光。\n愿每个人都能找到属于自己的闪闪发光的日子。\n\n— 完了！我被男同学包围了 ～高地探险篇～ —';
-  } else if (line.chapterEnd) {
-    const nextIdx = line.nextChapter;
-    if (nextIdx !== undefined && nextIdx < CHAPTER_META.length) {
-      if (nextIdx === 6) {
-        // 隐藏章
-        descText = checkHiddenUnlock()
-          ? '🎉 全员好感度满值！\n隐藏章节「星空下的约定」已解锁！'
-          : '继续提升好感度，解锁隐藏剧情吧～';
-      } else {
-        descText = `下一章：${CHAPTER_META[nextIdx].num} ${CHAPTER_META[nextIdx].name}\n点击继续下一章 →`;
-      }
-    }
-  }
-
-  screen.innerHTML = `
-    <div class="ending-title">${titleText}</div>
-    <div class="ending-text" style="white-space: pre-line;">${descText}</div>
-    <div style="display:flex; flex-direction:column; gap:10px; width:min(240px,80%);">
-      ${!line.finalEnding && line.nextChapter !== undefined && line.nextChapter < 6 ?
-        `<button class="menu-btn-main" id="btnNextChapter">下 一 章</button>` : ''}
-      ${line.chapterEnd && line.nextChapter === 6 && checkHiddenUnlock() ?
-        `<button class="menu-btn-main" id="btnHiddenChapter">进入隐藏章</button>` : ''}
-      <button class="menu-btn-secondary" id="btnBackTitle">返回标题</button>
-    </div>
-  `;
-  $('game-root').appendChild(screen);
-
-  const nextBtn = $('btnNextChapter');
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      screen.remove();
-      startChapter(line.nextChapter);
-    });
-  }
-  const hiddenBtn = $('btnHiddenChapter');
-  if (hiddenBtn) {
-    hiddenBtn.addEventListener('click', () => {
-      screen.remove();
-      startChapter(6);
-    });
-  }
-  const backBtn = $('btnBackTitle');
-  if (backBtn) {
-    backBtn.addEventListener('click', () => {
-      screen.remove();
-      goToTitle();
-    });
-  }
-
-  // 保存进度
+// 章节开场动画
+function showChapterIntro(num, cb) {
+  state.introPlaying = true;
+  const meta = CHAPTER_META[num];
+  const div = document.createElement('div');
+  div.className = 'chapter-intro';
+  div.innerHTML = `<div class="chapter-int-num">${meta.num}</div><div class="chapter-int-name">${meta.name}</div><div class="chapter-int-sub">～高地探险篇～</div>`;
+  $('game-root').appendChild(div);
+  setTimeout(()=>{
+    div.style.opacity = '0';
+    setTimeout(()=>{
+      div.remove();
+      state.introPlaying = false;
+      cb && cb();
+    },600);
+  },2000);
+}
+// 结局弹窗
+function showEndingScreen(lineData) {
+  const wrap = document.createElement('div');
+  wrap.className = 'ending-screen';
+  let title = lineData.text;
+  let desc = '';
+  if(lineData.finalEnding){
+    title = '✨ 真结局 · 完 ✨';
+    desc = '四位少年的高地冒险到此落幕，往后校园时光，仍会一起奔赴各处天台晚风。';
+  }else if(lineData.chapterEnd){
+    const n = lineData.nextChapter;
+    // 通关自动解锁下一章
+    if (n < state.chapterUnlocked.length) {
+  state.chapterUnlocked[n] = true;
   saveProgress();
 }
-
-// ========================================================
-// 存档 / 读档
-// ========================================================
-const SAVE_KEY = 'otome_saves_v1';
-const PROGRESS_KEY = 'otome_progress_v1';
-
-function getSaves() {
-  return safeLS(SAVE_KEY) || [null, null, null];
+    if(n === 6 && checkHiddenUnlock()) desc = '全员好感已达标，隐藏星空章节已解锁！';
+    else if(n === 6) desc = '提升四人全部好感，解锁隐藏结局';
+    else desc = `下一章节：${CHAPTER_META[n].name}`;
+  }
+  let btns = '';
+  if(!lineData.finalEnding && lineData.nextChapter !== undefined && lineData.next <6){
+    btns += `<button class="menu-btn-main" id="nextChapBtn">下一章</button>`;
+  }
+  if(lineData.nextChapter ===6 && checkHiddenUnlock()){
+    btns += `<button class="menu-btn-main" id="hiddenChapBtn">进入隐藏章</button>`;
+  }
+  btns += `<button class="menu-btn-secondary" id="backTitleBtn">返回标题</button>`;
+  wrap.innerHTML = `
+    <div class="ending-title">${title}</div>
+    <div class="ending-text" style="white-space:pre-line;">${desc}</div>
+    <div style="display:flex;flex-direction:column;gap:12;width:min(260px,90%)">${btns}</div>
+  `;
+  $('game-root').appendChild(wrap);
+  const nextBtn = document.getElementById('nextChapBtn');
+  if (nextBtn) nextBtn.onclick = () => { wrap.remove(); startChapter(lineData.nextChapter); };
+  const hiddenBtn = document.getElementById('hiddenChapBtn');
+  if (hiddenBtn) hiddenBtn.onclick = () => { wrap.remove(); startChapter(6); };
+  $('backTitleBtn').onclick = () => { wrap.remove(); goToTitle(); };
+  saveProgress();
 }
-
-function writeSaves(saves) {
-  safeLS(SAVE_KEY, saves);
-}
-
-function saveToSlot(slotIdx) {
-  const saves = getSaves();
-  saves[slotIdx] = {
-    chapter: state.currentChapter,
-    line: lineIdx,
-    affection: { ...state.affection },
-    chapterUnlocked: [...state.chapterUnlocked],
-    timestamp: Date.now(),
-    chapterName: CHAPTER_META[state.currentChapter]?.name || '',
-  };
-  writeSaves(saves);
-  // 刷新列表
-  renderSaveSlots();
-}
-
-function loadFromSlot(slotIdx) {
-  const saves = getSaves();
-  const save = saves[slotIdx];
-  if (!save) return false;
-
-  state.affection = { ...save.affection };
-  state.chapterUnlocked = [...save.chapterUnlocked];
-  updateHUD();
-
-  // 关闭菜单
-  $('saveMenu').classList.remove('show');
-  $('gameMenu').classList.remove('show');
-
-  // 从存档章节的指定行开始
-  startChapterFromLine(save.chapter, save.line);
-  return true;
-}
-
-function startChapterFromLine(chapterIdx, targetLine) {
-  state.currentChapter = chapterIdx;
-  state.activeChapter = chapterIdx;
-  chapterData = getChapterData(chapterIdx);
+// 开启章节
+let chapterData = [];
+let lineIdx = 0;
+function startChapter(num) {
+  if(num ===6 && !checkHiddenUnlock()){
+    alert('需要四位男生好感全部满值才能开启隐藏星空章节！');
+    return;
+  }
+  state.currentChapter = num;
+  state.activeChapter = num;
+  chapterData = getChapterData(num);
   lineIdx = 0;
   showingChoice = false;
-
-  setCharacters(null, null, null);
+  setCharacters(null,null,null);
   $('mainMenu').style.display = 'none';
   $('chapterSelect').style.display = 'none';
   $('gameMenu').classList.remove('show');
-  $('hud').style.display = state.hudVisible ? 'flex' : 'none';
   $('dialogBox').style.display = 'block';
   $('choiceContainer').style.display = 'none';
-
-  // 快进到目标行（先快速播一遍前面的场景设置）
-  // 找到目标行之前最近的 bg/char 设置
-  let bg = null;
-  let cl = null, cc = null, cr = null;
-  for (let i = 0; i < targetLine; i++) {
-    const l = chapterData[i];
-    if (l.bg) bg = l.bg;
-    if (l.charLeft !== undefined) cl = l.charLeft;
-    if (l.charCenter !== undefined) cc = l.charCenter;
-    if (l.charRight !== undefined) cr = l.charRight;
+  $('hud').style.display = state.hudVisible ? 'flex' : 'none';
+  showChapterIntro(num, nextLine);
+}
+// 存档常量
+const SAVE_STORAGE_KEY = 'otome_highland_save_v2';
+const PROGRESS_STORAGE_KEY = 'otome_progress_v2';
+// 获取存档
+function getAllSaves() {
+  return safeLS(SAVE_STORAGE_KEY) || [null,null,null];
+}
+function writeSaveList(arr) {
+  safeLS(SAVE_STORAGE_KEY, arr);
+}
+function saveToSlot(i) {
+  const arr = getAllSaves();
+  arr[i] = {
+    chapter: state.currentChapter,
+    line: lineIdx,
+    affection: {...state.affection},
+    unlockList: [...state.chapterUnlocked],
+    time: Date.now(),
+    chapName: CHAPTER_META[state.currentChapter].name
+  };
+  writeSaveList(arr);
+  renderSavePanel();
+}
+function loadSlot(i) {
+  const arr = getAllSaves();
+  const data = arr[i];
+  if(!data) return false;
+  state.affection = {...data.affection};
+  state.chapterUnlocked = [...data.unlockList];
+  updateHUD();
+  $('saveMenu').classList.remove('show');
+  $('gameMenu').classList.remove('show');
+  startChapterFromPoint(data.chapter, data.line);
+  return true;
+}
+function startChapterFromPoint(chap, targetLine) {
+  state.currentChapter = chap;
+  state.activeChapter = chap;
+  chapterData = getChapterData(chap);
+  lineIdx = 0;
+  showingChoice = false;
+  setCharacters(null,null,null);
+  $('mainMenu').style.display = 'none';
+  $('chapterSelect').style.display = 'none';
+  $('dialogBox').style.display = 'block';
+  $('choiceContainer').style.display = 'none';
+  let lastBg = null, lc=null, cc=null, rc=null;
+  for(let i=0;i<targetLine;i++){
+    const d = chapterData[i];
+    if(d.bg) lastBg = d.bg;
+    if(d.charLeft !== undefined) lc = d.charLeft;
+    if(d.charCenter !== undefined) cc = d.charCenter;
+    if(d.charRight !== undefined) rc = d.charRight;
   }
-  if (bg) setBackground(bg);
-  if (cl !== null || cc !== null || cr !== null) {
-    setCharacters(
-      cl !== null ? cl : state.charsOnScreen.left,
-      cc !== null ? cc : state.charsOnScreen.center,
-      cr !== null ? cr : state.charsOnScreen.right
-    );
-  }
-
+  if(lastBg) setBackground(lastBg);
+  setCharacters(lc,cc,rc);
   lineIdx = targetLine;
-  // 章节过场
-  showChapterIntro(chapterIdx, () => {
-    nextLine();
-  });
+  showChapterIntro(chap, nextLine);
 }
-
+// 自动存档
 function saveProgress() {
-  // 自动保存进度（解锁状态 + 好感度）
-  safeLS(PROGRESS_KEY, {
-    chapterUnlocked: state.chapterUnlocked,
-    affection: { ...state.affection },
-    lastChapter: state.activeChapter,
+  safeLS(PROGRESS_STORAGE_KEY, {
+    lastChap: state.activeChapter,
+    unlock: [...state.chapterUnlocked],
+    affection: {...state.affection}
   });
 }
-
-function loadProgress() {
-  const p = safeLS(PROGRESS_KEY);
-  if (p) {
-    if (p.chapterUnlocked) state.chapterUnlocked = p.chapterUnlocked;
-    if (p.affection) state.affection = p.affection;
-    updateHUD();
-  }
+// 修复：正确函数名 function 不再是ffunction
+function loadLastProgress() {
+  const data = safeLS(PROGRESS_STORAGE_KEY);
+  if(!data) return;
+  if(data.unlock) state.chapterUnlocked = data.unlock;
+  if(data.affection) state.affection = data.affection;
+  updateHUD();
 }
-
-function renderSaveSlots() {
-  const saves = getSaves();
-  const container = $('saveSlots');
-  container.innerHTML = '';
-  saves.forEach((save, i) => {
-    const slot = document.createElement('div');
-    slot.className = 'save-slot';
-    if (save) {
-      const date = new Date(save.timestamp);
-      const timeStr = `${date.getMonth()+1}/${date.getDate()} ${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}`;
-      slot.innerHTML = `
+// 渲染存档面板
+function renderSavePanel() {
+  const wrap = $('saveSlots');
+  wrap.innerHTML = '';
+  const saves = getAllSaves();
+  saves.forEach((slotData,i)=>{
+    const div = document.createElement('div');
+    div.className = 'save-slot';
+    if(slotData){
+      const d = new Date(slotData.time);
+      const t = `${d.getMonth()+1}/${d.getDate()} ${d.getHours()}:${d.getMinutes()}`;
+      div.innerHTML = `
         <div class="save-slot-info">
-          <div class="save-slot-chapter">${CHAPTER_META[save.chapter]?.num || ''} ${save.chapterName || '未知'}</div>
-          <div class="save-slot-detail">第 ${save.line} 行 · ${timeStr}</div>
+          <div class="save-slot-chapter">${slotData.chapName}</div>
+	  <div class="save-slot-detail">进度行：${slotData.line} | ${t}</div>
         </div>
-        <div style="font-size:12px; color:hsl(240,10%,55%);">存档 ${i+1}</div>
+        <span>存档${i+1}</span>
       `;
-    } else {
-      slot.innerHTML = `
-        <div class="save-slot-info">
-          <div class="save-slot-chapter save-slot-empty">空存档</div>
-          <div class="save-slot-detail save-slot-empty">点击保存到此位置</div>
-        </div>
-        <div style="font-size:12px; color:hsl(240,10%,55%);">存档 ${i+1}</div>
-      `;
+    }else{
+      div.innerHTML = `<div class="save-slot-info"><div class="save-slot-empty">空存档位</div></div><span>存档${i+1}</span>`;
     }
-    slot.addEventListener('click', () => {
-      if (state.menuMode === 'save') {
-        saveToSlot(i);
-        // 反馈
-        const orig = slot.innerHTML;
-        slot.innerHTML = `
-          <div class="save-slot-info">
-            <div class="save-slot-chapter" style="color:hsl(130,60%,40%);">✓ 保存成功</div>
-          </div>
-        `;
-        setTimeout(() => renderSaveSlots(), 800);
-      } else {
-        if (save) loadFromSlot(i);
-      }
-    });
-    container.appendChild(slot);
+    div.onclick = ()=>{
+      if(state.menuMode === 'save') saveTo(i);
+      else if(slotData) loadSlot(i);
+    };
+    wrap.appendChild(div);
   });
 }
-
-// ========================================================
-// 界面切换
-// ========================================================
+// 返回标题
 function goToTitle() {
-  state.screen = 'menu';
   clearInterval(state.typeTimer);
   state.isTyping = false;
+  state.fastForward = false;
   showingChoice = false;
-
+  state.screen = 'menu';
   $('mainMenu').style.display = 'flex';
   $('chapterSelect').style.display = 'none';
+  $('gameMenu').classList.remove('show');
+  $('saveMenu').classList.remove('show');
   $('dialogBox').style.display = 'none';
   $('choiceContainer').style.display = 'none';
   $('hud').style.display = 'none';
-  $('gameMenu').classList.remove('show');
-  $('saveMenu').classList.remove('show');
   $('ffIndicator').classList.remove('show');
-  state.fastForward = false;
-
-  // 清空角色
-  setCharacters(null, null, null);
+  setCharacters(null,null,null);
   setBackground(null);
-
   saveProgress();
 }
-
-function showChapterSelect() {
-  const list = $('chapterList');
-  list.innerHTML = '';
-  CHAPTER_META.forEach((meta, i) => {
+// 渲染章节列表
+function renderChapterSelectList() {
+  const wrap = $('chapterList');
+  wrap.innerHTML = '';
+  CHAPTER_META.forEach((meta,idx)=>{
     const card = document.createElement('div');
-    const locked = !state.chapterUnlocked[i];
-    card.className = 'chapter-card' + (locked ? ' locked' : '');
+    const lock = !state.chapterUnlocked[idx] && idx !==6;
+    card.className = 'chapter-card' + (lock ? ' locked' : '');
     card.innerHTML = `
       <div class="chapter-num">${meta.num}</div>
-      <div class="chapter-name">${locked ? '🔒 ' + meta.name : meta.name}</div>
+      <div class="chapter-name">${lock ? '🔒 '+meta.name : meta.name}</div>
       <div class="chapter-desc">${meta.desc}</div>
     `;
-    if (!locked) {
-      card.addEventListener('click', () => {
+    if(!lock){
+      card.onclick = ()=>{
         $('chapterSelect').style.display = 'none';
-        startChapter(i);
-      });
+        startChapter(idx);
+      };
     }
-    list.appendChild(card);
+    wrap.appendChild(card);
   });
-
-  $('chapterSelect').style.display = 'flex';
 }
-
-// ========================================================
-// 装饰爱心
-// ========================================================
-function createDecoHearts() {
-  const container = $('decoHearts');
-  const hearts = ['♡', '♥', '❀', '✿'];
-  for (let i = 0; i < 15; i++) {
-    const h = document.createElement('div');
-    h.className = 'deco-heart';
-    h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-    h.style.left = Math.random() * 100 + '%';
-    h.style.top = Math.random() * 100 + '%';
-    h.style.fontSize = (12 + Math.random() * 20) + 'px';
-    h.style.animationDelay = Math.random() * 4 + 's';
-    h.style.animationDuration = (4 + Math.random() * 3) + 's';
-    container.appendChild(h);
-  }
-}
-
-// ========================================================
-// 事件绑定
-// ========================================================
-function bindEvents() {
-  // 主菜单
-  $('btnNewGame').addEventListener('click', () => {
-    // 新游戏：重置好感度、解锁、从第一章开始
-    state.affection = { c20: 0, c21: 0, c24: 0, c32: 0 };
-    state.chapterUnlocked = [true, false, false, false, false, false, false];
+// 绑定全部点击事件
+function bindAllEvents() {
+  // 主菜单按钮
+  $('btnNewGame').onclick = ()=>{
+    state.affection = {c20:0,c21:0,c24:0,c32:0};
+    state.chapterUnlocked = [true,false,false,false,false,false,false];
     updateHUD();
     startChapter(0);
-  });
-
-  $('btnContinue').addEventListener('click', () => {
-    const p = safeLS(PROGRESS_KEY);
-    if (p && p.lastChapter !== undefined) {
-      startChapter(p.lastChapter);
-    } else {
-      // 没有进度，从第一章开始
-      startChapter(0);
-    }
-  });
-
-  $('btnChapterSelect').addEventListener('click', () => {
-    showChapterSelect();
-  });
-
-  $('btnLoadGame').addEventListener('click', () => {
+  };
+  $('btnContinue').onclick = ()=>{
+    const p = safeLS(PROGRESS_STORAGE_KEY);
+    if(p && p.lastChap !== undefined) startChapter(p.lastChap);
+    else startChapter(0);
+  };
+  $('btnChapterSelect').onclick = ()=>{
+    renderChapterSelectList();
+    $('chapterSelect').style.display = 'flex';
+  };
+  $('btnChapterBack').onclick = ()=> $('chapterSelect').style.display = 'none';
+  $('btnLoadGame').onclick = ()=>{
     state.menuMode = 'load';
     $('saveMenuTitle').textContent = '读取存档';
-    renderSaveSlots();
+    renderSavePanel();
     $('saveMenu').classList.add('show');
-  });
-
-  $('btnChapterBack').addEventListener('click', () => {
-    $('chapterSelect').style.display = 'none';
-  });
-
+  };
   // 对话框点击
-  $('dialogBox').addEventListener('click', (e) => {
-    if (showingChoice) return;
-    if (state.isTyping) {
-      skipTyping();
-    } else {
-      nextLine();
-    }
+  $('dialogBox').addEventListener('click', (e)=>{
+    e.stopPropagation();
+    if(showingChoice) return;
+    if(state.isTyping) skipTyping();
+    else nextLine();
   });
-
-  // 菜单按钮
-  $('menuBtn').addEventListener('click', (e) => {
+  // 右上角菜单
+  $('menuBtn').addEventListener('click', e=>{
     e.stopPropagation();
     $('gameMenu').classList.add('show');
   });
-
-  // 游戏菜单
-  $('btnResume').addEventListener('click', () => {
-    $('gameMenu').classList.remove('show');
-  });
-
-  $('btnSave').addEventListener('click', () => {
+  // 游戏内菜单按钮
+  $('btnResume').onclick = ()=> $('gameMenu').classList.remove('show');
+  $('btnSave').onclick = ()=>{
     state.menuMode = 'save';
     $('saveMenuTitle').textContent = '保存存档';
-    renderSaveSlots();
+    renderSavePanel();
     $('saveMenu').classList.add('show');
-  });
-
-  $('btnLoad').addEventListener('click', () => {
+  };
+  $('btnLoad').onclick = ()=>{
     state.menuMode = 'load';
     $('saveMenuTitle').textContent = '读取存档';
-    renderSaveSlots();
-    $('saveMenu').classList.add('show');
-  });
-
-  $('btnToggleHud').addEventListener('click', () => {
+    renderSavePanel();
+  };
+  $('btnToggleHud').onclick = ()=>{
     state.hudVisible = !state.hudVisible;
     $('hud').style.display = state.hudVisible ? 'flex' : 'none';
-  });
-
-  $('btnBackToTitle').addEventListener('click', () => {
-    $('gameMenu').classList.remove('show');
+  };
+  $('btnBackToTitle').onclick = ()=>{
+    $('gameMenu').classList.remove();
     goToTitle();
+  };
+  $('btnSaveBack').onclick = ()=> $('saveMenu').classList.remove('show');
+  // 点击遮罩关闭弹窗
+  $('gameMenu').addEventListener('click', e=>{
+    if(e.target === $('gameMenu')) $('gameMenu').classList.remove('show');
   });
-
-  $('btnSaveBack').addEventListener('click', () => {
-    $('saveMenu').classList.remove('show');
+  $('saveMenu').addEventListener('click', e=>{
+    if(e.target === $('saveMenu')) $('saveMenu').classList.remove('show');
   });
-
   // 键盘快捷键
-  document.addEventListener('keydown', (e) => {
-    if (state.screen !== 'playing' && !$('dialogBox').offsetParent) return;
-    if ($('gameMenu').classList.contains('show')) return;
-    if ($('saveMenu').classList.contains('show')) return;
-
-    if (e.key === ' ' || e.key === 'Enter') {
+  document.addEventListener('keydown', e=>{
+    if($('gameMenu').classList.contains('show') || $('saveMenu').classList.contains('show')) return;
+    if(e.key === 'Enter' || e.key === ' '){
       e.preventDefault();
-      if (showingChoice) return;
-      if (state.isTyping) {
-        skipTyping();
-      } else {
-        nextLine();
-      }
+      if(showingChoice) return;
+      if(state.isTyping) skipTyping();
+      else nextLine();
     }
-    if (e.key === 'Control') {
-      // 按住Ctrl快进
+    if(e.key === 'Escape') $('gameMenu').classList.toggle('show');
+    if(e.ctrlKey){
       state.fastForward = true;
       $('ffIndicator').classList.add('show');
-      if (state.isTyping) {
-        skipTyping();
-      }
-    }
-    if (e.key === 'Escape') {
-      $('gameMenu').classList.toggle('show');
+      if(state.isTyping) skipTyping();
     }
   });
-
-  document.addEventListener('keyup', (e) => {
-    if (e.key === 'Control') {
+  document.addEventListener('keyup', e=>{
+    if(e.key === 'Control'){
       state.fastForward = false;
       $('ffIndicator').classList.remove('show');
     }
   });
-
-  // 长按对话框快进（移动端）
+  // 移动端长按快进
   let ffTimer = null;
-  let ffActive = false;
-  $('dialogBox').addEventListener('touchstart', (e) => {
-    if (showingChoice) return;
-    ffTimer = setTimeout(() => {
+  $('dialogBox').addEventListener('touchstart', ()=>{
+    if(showingChoice) return;
+    ffTimer = setTimeout(()=>{
       state.fastForward = true;
-      ffActive = true;
       $('ffIndicator').classList.add('show');
-      if (state.isTyping) skipTyping();
-    }, 600);
+      if(state.isTyping) skipTyping();
+    },600);
   });
-  $('dialogBox').addEventListener('touchend', () => {
+  $('dialogBox').addEventListener('touchend', ()=>{
     clearTimeout(ffTimer);
-    if (ffActive) {
-      state.fastForward = false;
-      ffActive = false;
-      $('ffIndicator').classList.remove('show');
-    }
-  });
-
-  // 点击游戏菜单背景关闭
-  $('gameMenu').addEventListener('click', (e) => {
-    if (e.target === $('gameMenu')) {
-      $('gameMenu').classList.remove('show');
-    }
-  });
-  $('saveMenu').addEventListener('click', (e) => {
-    if (e.target === $('saveMenu')) {
-      $('saveMenu').classList.remove('show');
-    }
+    state.fastForward = false;
+    $('ffIndicator').classList.remove('show');
   });
 }
-
-// ========================================================
-// 初始化
-// ========================================================
-function init() {
+// 页面初始化
+function initGame() {
   createDecoHearts();
-  loadProgress();
-  bindEvents();
+  loadLastProgress();
+  bindAllEvents();
   updateHUD();
-
-  // 初始隐藏对话框
   $('dialogBox').style.display = 'none';
   $('hud').style.display = 'none';
 }
-
-// 添加屏幕震动动画
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes shakeScreen {
-    0%, 100% { transform: translateX(0); }
-    20% { transform: translateX(-6px); }
-    40% { transform: translateX(6px); }
-    60% { transform: translateX(-4px); }
-    80% { transform: translateX(4px); }
+// 主菜单漂浮爱心
+function createDecoHearts() {
+  const wrap = $('decoHearts');
+  wrap.innerHTML = ''; // 新增清空
+  const icons = ['♡','♥','❀','✿'];
+  for(let i=0;i<16;i++){
+    const el = document.createElement('div');
+    el.className = 'deco-heart';
+    el.textContent = icons[Math.floor(Math.random()*icons.length)];
+    el.style.left = Math.random()*100 + '%';
+    el.style.top = Math.random()*100 + '%';
+    el.style.fontSize = (12 + Math.random()*22) + 'px';
+    el.style.animationDelay = Math.random()*4 + 's';
+    wrap.appendChild(el);
   }
+}
+// 震动动画样式
+const shakeStyle = document.createElement('style');
+shakeStyle.textContent = `
+@keyframes shakeScreen {
+  0%{transform:translateX(0px)}
+  20%{transform:translateX(-6px)}
+  40%{transform:translateX(6px)}
+  60%{transform:translateX(-4px)}
+  80%{transform:translateX(4px)}
+  100%{transform:translateX(0px)}
+}
 `;
-document.head.appendChild(style);
-
-document.addEventListener('DOMContentLoaded', init);
+document.head.appendChild(shakeStyle);
+// 页面加载完成启动
+document.addEventListener('DOMContentLoaded', initGame);
 </script>
+</div>
 </body>
 </html>
